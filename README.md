@@ -1,20 +1,6 @@
-# Frontend side for angular-sailsjs-boilerplate
-[![GitHub version](https://badge.fury.io/gh/tarlepp%2Fangular-sailsjs-boilerplate-frontend.svg)](https://badge.fury.io/gh/tarlepp%2Fangular-sailsjs-boilerplate-frontend)
-[![Build Status](https://travis-ci.org/tarlepp/angular-sailsjs-boilerplate-frontend.png?branch=master)](https://travis-ci.org/tarlepp/angular-sailsjs-boilerplate-frontend)
-[![Dependency Status](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend.svg)](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend)
-[![devDependency Status](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend/dev-status.svg)](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend#info=devDependencies)
+# Frontend side for home-dashboard
 
-This frontend code is used on [angular-sailsjs-boilerplate](https://github.com/tarlepp/angular-sailsjs-boilerplate)
-
-This is an example AngularJS application to demonstrate how to use separate back- and frontend applications. Currently
-this demo contains following features:
-
-* Login with backend
-* JWT token authentication after login
-* Simple list view (Measurements / Sensors) to demonstrate socket communications
-* Generic error handler which is attached to $http and $sailsSocket
-* Message service to show specified messages to users
-* Live chat to demonstrate subscribe actions
+This frontend code is used on [home-dashboard](https://github.com/Hekku2/home-dashboard)
 
 ## Used components
 This frontend application uses following 3rd party libraries to make all this magic happen.
@@ -93,5 +79,3 @@ Then head to `http://localhost:3000` in your browser.
 
 ## License
 The MIT License (MIT)
-
-Copyright (c) 2015 Tarmo Leppänen
