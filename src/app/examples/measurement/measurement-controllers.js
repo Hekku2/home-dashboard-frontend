@@ -1,47 +1,46 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.book' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.examples.measurement' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
 (function() {
   'use strict';
 
-  // Controller for new book creation.
-  angular.module('frontend.examples.book')
-    .controller('BookAddController', [
+  // Controller for new measurement creation.
+  angular.module('frontend.examples.measurement')
+    .controller('MeasurementAddController', [
       '$scope', '$state',
       'MessageService',
-      'BookModel',
-      '_authors',
+      'MeasurementModel',
+      '_sensors',
       function controller(
         $scope, $state,
         MessageService,
-        BookModel,
-        _authors
+        MeasurementModel,
+        _sensors
       ) {
-        // Store authors
-        $scope.authors = _authors;
+        // Store sensors
+        $scope.sensors = _sensors;
 
-        // Initialize book model
-        $scope.book = {
-          title: '',
-          description: '',
-          author: '',
-          releaseDate: new Date()
+        // Initialize measurement model
+        $scope.measurement = {
+          value: 0,
+          sensor: '',
+          timestamp: new Date()
         };
 
         /**
-         * Scope function to store new book to database. After successfully save user will be redirected
-         * to view that new created book.
+         * Scope function to store new measurement to database. After successfully save user will be redirected
+         * to view that new created measurement.
          */
-        $scope.addBook = function addBook() {
-          BookModel
-            .create(angular.copy($scope.book))
+        $scope.addMeasurement = function addMeasurement() {
+          MeasurementModel
+            .create(angular.copy($scope.measurement))
             .then(
               function onSuccess(result) {
-                MessageService.success('New book added successfully');
+                MessageService.success('New measurement added successfully');
 
-                $state.go('examples.book', {id: result.data.id});
+                $state.go('examples.measurement', {id: result.data.id});
               }
             )
           ;
@@ -50,35 +49,35 @@
     ])
   ;
 
-  // Controller to show single book on GUI.
-  angular.module('frontend.examples.book')
-    .controller('BookController', [
+  // Controller to show single measurement on GUI.
+  angular.module('frontend.examples.measurement')
+    .controller('MeasurementController', [
       '$scope', '$state',
       'UserService', 'MessageService',
-      'BookModel', 'AuthorModel',
-      '_book',
+      'MeasurementModel', 'SensorModel',
+      '_measurement',
       function controller(
         $scope, $state,
         UserService, MessageService,
-        BookModel, AuthorModel,
-        _book
+        MeasurementModel, SensorModel,
+        _measurement
       ) {
         // Set current scope reference to model
-        BookModel.setScope($scope, 'book');
+        MeasurementModel.setScope($scope, 'measurement');
 
         // Initialize scope data
         $scope.user = UserService.user();
-        $scope.book = _book;
-        $scope.authors = [];
-        $scope.selectAuthor = _book.author ? _book.author.id : null;
+        $scope.measurement = _measurement;
+        $scope.sensors = [];
+        $scope.selectSensor = _measurement.sensor ? _measurement.sensor.id : null;
 
-        // Book delete dialog buttons configuration
+        // Measurement delete dialog buttons configuration
         $scope.confirmButtonsDelete = {
           ok: {
             label: 'Delete',
             className: 'btn-danger',
             callback: function callback() {
-              $scope.deleteBook();
+              $scope.deleteMeasurement();
             }
           },
           cancel: {
@@ -88,58 +87,58 @@
         };
 
         /**
-         * Scope function to save the modified book. This will send a
+         * Scope function to save the modified measurement. This will send a
          * socket request to the backend server with the modified object.
          */
-        $scope.saveBook = function saveBook() {
-          var data = angular.copy($scope.book);
+        $scope.saveMeasurement = function saveMeasurement() {
+          var data = angular.copy($scope.measurement);
 
-          // Set author id to update data
-          data.author = $scope.selectAuthor;
+          // Set sensor id to update data
+          data.sensor = $scope.selectSensor;
 
           // Make actual data update
-          BookModel
+          MeasurementModel
             .update(data.id, data)
             .then(
               function onSuccess() {
-                MessageService.success('Book "' + $scope.book.title + '" updated successfully');
+                MessageService.success('Measurement "' + $scope.measurement.title + '" updated successfully');
               }
             )
           ;
         };
 
         /**
-         * Scope function to delete current book. This will send DELETE query to backend via web socket
-         * query and after successfully delete redirect user back to book list.
+         * Scope function to delete current measurement. This will send DELETE query to backend via web socket
+         * query and after successfully delete redirect user back to measurement list.
          */
-        $scope.deleteBook = function deleteBook() {
-          BookModel
-            .delete($scope.book.id)
+        $scope.deleteMeasurement = function deleteMeasurement() {
+          MeasurementModel
+            .delete($scope.measurement.id)
             .then(
               function onSuccess() {
-                MessageService.success('Book "' + $scope.book.title + '" deleted successfully');
+                MessageService.success('Measurement "' + $scope.measurement.title + '" deleted successfully');
 
-                $state.go('examples.books');
+                $state.go('examples.measurements');
               }
             )
           ;
         };
 
         /**
-         * Scope function to fetch author data when needed, this is triggered whenever user starts to edit
-         * current book.
+         * Scope function to fetch sensor data when needed, this is triggered whenever user starts to edit
+         * current measurement.
          *
          * @returns {null|promise}
          */
-        $scope.loadAuthors = function loadAuthors() {
-          if ($scope.authors.length) {
+        $scope.loadSensors = function loadSensors() {
+          if ($scope.sensors.length) {
             return null;
           } else {
-            return AuthorModel
+            return SensorModel
               .load()
               .then(
                 function onSuccess(data) {
-                  $scope.authors = data;
+                  $scope.sensors = data;
                 }
               )
             ;
@@ -149,24 +148,24 @@
     ])
   ;
 
-  // Controller which contains all necessary logic for book list GUI on boilerplate application.
-  angular.module('frontend.examples.book')
-    .controller('BookListController', [
+  // Controller which contains all necessary logic for measurement list GUI on boilerplate application.
+  angular.module('frontend.examples.measurement')
+    .controller('MeasurementListController', [
       '$scope', '$q', '$timeout',
       '_',
       'ListConfig', 'SocketHelperService',
-      'UserService', 'BookModel', 'AuthorModel',
-      '_items', '_count', '_authors',
+      'UserService', 'MeasurementModel', 'SensorModel',
+      '_items', '_count', '_sensors',
       function controller(
         $scope, $q, $timeout,
         _,
         ListConfig, SocketHelperService,
-        UserService, BookModel, AuthorModel,
-        _items, _count, _authors
+        UserService, MeasurementModel, SensorModel,
+        _items, _count, _sensors
       ) {
         // Set current scope reference to models
-        BookModel.setScope($scope, false, 'items', 'itemCount');
-        AuthorModel.setScope($scope, false, 'authors');
+        MeasurementModel.setScope($scope, false, 'items', 'itemCount');
+        SensorModel.setScope($scope, false, 'sensors');
 
         // Add default list configuration variable to current scope
         $scope = angular.extend($scope, angular.copy(ListConfig.getConfig()));
@@ -174,15 +173,15 @@
         // Set initial data
         $scope.items = _items;
         $scope.itemCount = _count.count;
-        $scope.authors = _authors;
+        $scope.sensors = _sensors;
         $scope.user = UserService.user();
 
         // Initialize used title items
-        $scope.titleItems = ListConfig.getTitleItems(BookModel.endpoint);
+        $scope.titleItems = ListConfig.getTitleItems(MeasurementModel.endpoint);
 
         // Initialize default sort data
         $scope.sort = {
-          column: 'releaseDate',
+          column: 'timestamp',
           direction: false
         };
 
@@ -207,28 +206,28 @@
         };
 
         /**
-         * Helper function to fetch specified author property.
+         * Helper function to fetch specified sensor property.
          *
-         * @param   {Number}    authorId        Author id to search
-         * @param   {String}    [property]      Property to return, if not given returns whole author object
-         * @param   {String}    [defaultValue]  Default value if author or property is not founded
+         * @param   {Number}    sensorId        Sensor id to search
+         * @param   {String}    [property]      Property to return, if not given returns whole sensor object
+         * @param   {String}    [defaultValue]  Default value if sensor or property is not founded
          *
          * @returns {*}
          */
-        $scope.getAuthor = function getAuthor(authorId, property, defaultValue) {
+        $scope.getSensor = function getSensor(sensorId, property, defaultValue) {
           defaultValue = defaultValue || 'Unknown';
           property = property || true;
 
-          // Find author
-          var author = _.find($scope.authors, function iterator(author) {
-            return parseInt(author.id, 10) === parseInt(authorId.toString(), 10);
+          // Find sensor
+          var sensor = _.find($scope.sensors, function iterator(sensor) {
+            return parseInt(sensor.id, 10) === parseInt(sensorId.toString(), 10);
           });
 
-          return author ? (property === true ? author : author[property]) : defaultValue;
+          return sensor ? (property === true ? sensor : sensor[property]) : defaultValue;
         };
 
         /**
-         * Simple watcher for 'currentPage' scope variable. If this is changed we need to fetch book data
+         * Simple watcher for 'currentPage' scope variable. If this is changed we need to fetch measurement data
          * from server.
          */
         $scope.$watch('currentPage', function watcher(valueNew, valueOld) {
@@ -238,7 +237,7 @@
         });
 
         /**
-         * Simple watcher for 'itemsPerPage' scope variable. If this is changed we need to fetch book data
+         * Simple watcher for 'itemsPerPage' scope variable. If this is changed we need to fetch measurement data
          * from server.
          */
         $scope.$watch('itemsPerPage', function watcher(valueNew, valueOld) {
@@ -295,7 +294,7 @@
          *  1) Data count by given filter parameters
          *  2) Actual data fetch for current page with filter parameters
          *
-         * These are fetched via 'BookModel' service with promises.
+         * These are fetched via 'MeasurementModel' service with promises.
          *
          * @private
          */
@@ -315,7 +314,7 @@
           };
 
           // Fetch data count
-          var count = BookModel
+          var count = MeasurementModel
             .count(commonParameters)
             .then(
               function onSuccess(response) {
@@ -325,7 +324,7 @@
           ;
 
           // Fetch actual data
-          var load = BookModel
+          var load = MeasurementModel
             .load(_.merge({}, commonParameters, parameters))
             .then(
               function onSuccess(response) {

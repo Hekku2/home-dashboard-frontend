@@ -165,14 +165,14 @@
           }
         });
 
-        // Simple watcher for 'currentPage' scope variable. If this is changed we need to fetch book data from server.
+        // Simple watcher for 'currentPage' scope variable. If this is changed we need to fetch Measurement data from server.
         $scope.$watch('currentPage', function watcher(valueNew, valueOld) {
           if (valueNew !== valueOld) {
             _fetchData();
           }
         });
 
-        // Simple watcher for 'itemsPerPage' scope variable. If this is changed we need to fetch book data from server.
+        // Simple watcher for 'itemsPerPage' scope variable. If this is changed we need to fetch Measurement data from server.
         $scope.$watch('itemsPerPage', function watcher(valueNew, valueOld) {
           if (valueNew !== valueOld) {
             _triggerFetchData();

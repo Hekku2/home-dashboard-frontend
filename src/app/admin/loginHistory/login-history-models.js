@@ -8,7 +8,7 @@
   'use strict';
 
   /**
-   * Model for Book API, this is used to wrap all Book objects specified actions and data change actions.
+   * Model for Measurement API, this is used to wrap all Measurement objects specified actions and data change actions.
    */
   angular.module('frontend.admin.login-history')
     .factory('LoginHistoryModel', [

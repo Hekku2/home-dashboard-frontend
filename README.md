@@ -11,7 +11,7 @@ this demo contains following features:
 
 * Login with backend
 * JWT token authentication after login
-* Simple list view (Books / Authors) to demonstrate socket communications
+* Simple list view (Measurements / Sensors) to demonstrate socket communications
 * Generic error handler which is attached to $http and $sailsSocket
 * Message service to show specified messages to users
 * Live chat to demonstrate subscribe actions

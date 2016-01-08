@@ -1,21 +1,21 @@
-<div data-ng-show="!author">
-    <h3>Requested author not found</h3>
+<div data-ng-show="!sensor">
+    <h3>Requested sensor not found</h3>
 </div>
 
-<div data-ng-show="author">
+<div data-ng-show="sensor">
     <form class="form-vertical" role="form"
         data-editable-form name="editableForm"
-        data-onaftersave="saveAuthor()"
+        data-onaftersave="saveSensor()"
     >
         <div class="row">
             <div class="col-md-8">
                 <h3>
                     <span style="width: 100%;"
-                        data-editable-text="author.name"
-                        data-e-name="author.name"
+                        data-editable-text="sensor.name"
+                        data-e-name="sensor.name"
                         data-e-required
                     >
-                        {{author.name}}
+                        {{sensor.name}}
                     </span>
 
                     <span class="pull-right"
@@ -31,12 +31,12 @@
                 </h3>
 
                 <p style="white-space: pre-line"
-                    data-editable-textarea="author.description"
-                    data-e-name="author.description"
+                    data-editable-textarea="sensor.description"
+                    data-e-name="sensor.description"
                     data-e-class="editable-textarea"
                     data-e-required
                 >
-                    {{author.description}}
+                    {{sensor.description}}
                 </p>
 
                 <div>
@@ -54,7 +54,7 @@
                         </button>
                         <button type="button" class="btn btn-danger pull-right"
                             data-ng-bootbox-title="Danger - Danger - Danger"
-                            data-ng-bootbox-custom-dialog="Are you sure about the <strong>{{author.name}}</strong> author delete?"
+                            data-ng-bootbox-custom-dialog="Are you sure about the <strong>{{sensor.name}}</strong> sensor delete?"
                             data-ng-bootbox-buttons="confirmButtonsDelete"
                         >
                             Delete
@@ -64,7 +64,7 @@
             </div>
 
             <div class="col-md-4">
-                <h4>Books ({{booksCount}})</h4>
+                <h4>Measurements ({{measurementsCount}})</h4>
                 <table class="table table-condensed table-hover">
                     <thead>
                         <tr>
@@ -77,12 +77,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-ng-repeat="book in books">
+                        <tr data-ng-repeat="measurement in measurements">
                             <td>
-                                <a data-ui-sref="examples.book({id: book.id})">{{book.title}}</a>
+                                <a data-ui-sref="examples.measurement({id: measurement.id})">{{measurement.title}}</a>
                             </td>
                             <td class="text-right">
-                                {{book.releaseDate | amDateFormat: 'YYYY'}}
+                                {{measurement.timestamp | amDateFormat: 'YYYY'}}
                             </td>
                         </tr>
                     </tbody>

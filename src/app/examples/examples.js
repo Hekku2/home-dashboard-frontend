@@ -2,10 +2,8 @@
  * Angular module for examples component. This component is divided to following logical components:
  *
  *  frontend.examples.about
- *  frontend.examples.author
- *  frontend.examples.book
- *  frontend.examples.chat
- *  frontend.examples.messages
+ *  frontend.examples.sensor
+ *  frontend.examples.measurement
  *
  * Each component has it own configuration for ui-router.
  */
@@ -15,10 +13,8 @@
   // Define frontend.admin module
   angular.module('frontend.examples', [
     'frontend.examples.about',
-    'frontend.examples.author',
-    'frontend.examples.book',
-    'frontend.examples.chat',
-    'frontend.examples.messages'
+    'frontend.examples.sensor',
+    'frontend.examples.measurement'
   ]);
 
   // Module configuration
@@ -37,7 +33,7 @@
                 controller: [
                   '$state',
                   function($state) {
-                    $state.go('examples.books');
+                    $state.go('examples.measurements');
                   }
                 ]
               },

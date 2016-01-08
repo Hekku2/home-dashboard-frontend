@@ -1,11 +1,11 @@
 <h3>
-    Authors ({{itemCount}})
+    Sensors ({{itemCount}})
 
     <div class="col-xs-6 pull-right list-search">
         <a
             data-ng-if="user.admin"
-            data-ui-sref="examples.author.add"
-            data-tooltip="Add new author"
+            data-ui-sref="examples.sensor.add"
+            data-tooltip="Add new sensor"
         ><i class="fa fa-plus-circle"></i></a>
 
         <list-search
@@ -49,11 +49,11 @@
     </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="author in items">
+        <tr data-ng-repeat="sensor in items">
             <td class="col-md-11">
-                <a data-ui-sref="examples.author({id: author.id})">{{author.name}}</a>
+                <a data-ui-sref="examples.sensor({id: sensor.id})">{{sensor.name}}</a>
             </td>
-            <td class="col-md-1 text-right">{{author.books.length}}</td>
+            <td class="col-md-1 text-right">{{sensor.measurements.length}}</td>
         </tr>
 
         <tr data-ng-if="items.length === 0">

@@ -18,14 +18,14 @@
          * List title item configuration.
          *
          * @type  {{
-         *          author: *[],
-         *          book: *[]
+         *          sensor: *[],
+         *          measurement: *[]
          *        }}
          */
         var titleItems = {
-          author: [
+          sensor: [
             {
-              title: 'Author',
+              title: 'Sensor',
               column: 'name',
               class: 'col-xs-11',
               searchable: true,
@@ -34,7 +34,7 @@
               inTitle: true
             },
             {
-              title: 'Books',
+              title: 'Measurements',
               column: false,
               class: 'text-right col-xs-1',
               searchable: false,
@@ -43,18 +43,18 @@
               inTitle: true
             }
           ],
-          book: [
+          measurement: [
             {
-              title: 'Title',
-              column: 'title',
+              title: 'Value',
+              column: 'value',
               class: 'col-xs-8',
-              searchable: true,
+              searchable: false,
               sortable: true,
-              inSearch: true,
+              inSearch: false,
               inTitle: true
             },
             {
-              title: 'Author',
+              title: 'Sensor',
               column: false,
               class: 'col-xs-3',
               searchable: false,
@@ -63,8 +63,8 @@
               inTitle: true
             },
             {
-              title: 'Year',
-              column: 'releaseDate',
+              title: 'Timestamp',
+              column: 'timestamp',
               class: 'col-xs-1 text-right',
               searchable: true,
               sortable: true,

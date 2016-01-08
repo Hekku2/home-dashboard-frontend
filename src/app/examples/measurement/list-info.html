@@ -2,12 +2,12 @@
 
 <p>
     This page demonstrates fetching data from the backend via WebSockets and showing it in a simple list.
-    This example application fetches <em>authors</em> with related <em>book</em> data populated for each
+    This example application fetches <em>measurements</em> with related <em>sensor</em> data populated for each
     and also covers data pagination, sort, and search functions. The actual data is fetched from the
     following endpoint on the backend.
 </p>
 
-<pre>GET {{backendConfig.url}}/author <a ng-href="{{backendConfig.url}}/author" target="_blank" data-tooltip="Open endpoint url"><i class="fa fa-external-link"></i></a></pre>
+<pre>GET {{backendConfig.url}}/measurement <a ng-href="{{backendConfig.url}}/measurement" target="_blank" data-tooltip="Open endpoint url"><i class="fa fa-external-link"></i></a></pre>
 
 <p>
     Note that all data communication to the backend requires a JSON Web Token (<em>JWT</em>)
@@ -35,7 +35,7 @@
         Pagination
     </dt>
     <dd>
-        By default, the page displays an example of ten books per page. You can change the number to be
+        By default, the page displays an example of ten measurements per page. You can change the number to be
         displayed per page.
     </dd>
 
@@ -58,7 +58,7 @@
         Navigation
     </dt>
     <dd>
-        Access to a single author and book pages simply by clicking the author or book name.
+        Access to single measurement and sensor pages simply by clicking the measurement or sensor name.
     </dd>
 </dl>
 

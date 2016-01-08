@@ -25,9 +25,9 @@
         $scope, $state,
         AuthService, FocusOnService
       ) {
-        // Already authenticated so redirect back to books list
+        // Already authenticated so redirect back to measurements list
         if (AuthService.isAuthenticated()) {
-          $state.go('examples.books');
+          $state.go('examples.measurements');
         }
 
         // Scope function to perform actual login request to server
@@ -36,7 +36,7 @@
             .login($scope.credentials)
             .then(
               function successCallback() {
-                $state.go('examples.books');
+                $state.go('examples.measurements');
               },
               function errorCallback() {
                 _reset();

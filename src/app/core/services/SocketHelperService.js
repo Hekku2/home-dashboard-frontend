@@ -2,7 +2,7 @@
  * Simple angular service to parse search filters for socket queries. Usage example:
  *
  *  $sailsSocket
- *    .get("/Book/", {
+ *    .get("/Measurement/", {
  *      params: {
  *        where: SocketHelperService.getWhere($scope.filters)
  *      }

@@ -40,23 +40,13 @@
         var items = {
           'examples': [
             {
-              state: 'examples.books',
-              title: 'Books',
+              state: 'examples.measurements',
+              title: 'Measurements',
               access: AccessLevels.user
             },
             {
-              state: 'examples.authors',
-              title: 'Authors',
-              access: AccessLevels.user
-            },
-            {
-              state: 'examples.messages',
-              title: 'Messages',
-              access: AccessLevels.user
-            },
-            {
-              state: 'examples.chat',
-              title: 'Chat',
+              state: 'examples.sensors',
+              title: 'Sensors',
               access: AccessLevels.user
             }
           ],
@@ -228,83 +218,83 @@
          * @type    {{}}
          */
         var data = {
-          'examples.books': {
+          'examples.measurements': {
             'Backend': [
               {
-                url: repository + 'backend/api/models/Book.js',
-                title: 'Book.js',
+                url: repository + 'backend/api/models/Measurement.js',
+                title: 'Measurement.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'backend/api/controllers/BookController.js',
-                title: 'BookController.js',
+                url: repository + 'backend/api/controllers/MeasurementController.js',
+                title: 'MeasurementController.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'backend/test/fixtures/Book.json',
-                title: 'Book.json',
+                url: repository + 'backend/test/fixtures/Measurement.json',
+                title: 'Measurement.json',
                 info: types.generic.data
               }
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/book/book.js',
-                title: 'book.js',
+                url: repository + 'frontend/src/app/examples/measurement/measurement.js',
+                title: 'measurement.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/book/book-controllers.js',
-                title: 'book-controllers.js',
+                url: repository + 'frontend/src/app/examples/measurement/measurement-controllers.js',
+                title: 'measurement-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/book/book-models.js',
-                title: 'book-models.js',
+                url: repository + 'frontend/src/app/examples/measurement/measurement-models.js',
+                title: 'measurement-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/book/list.html',
+                url: repository + 'frontend/src/app/examples/measurement/list.html',
                 title: 'list.html',
                 info: types.generic.template
               }
             ]
           },
-          'examples.authors': {
+          'examples.sensors': {
             'Backend': [
               {
-                url: repository + 'backend/api/models/Author.js',
-                title: 'Author.js',
+                url: repository + 'backend/api/models/Sensor.js',
+                title: 'Sensor.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'backend/api/controllers/AuthorController.js',
-                title: 'AuthorController.js',
+                url: repository + 'backend/api/controllers/SensorController.js',
+                title: 'SensorController.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'backend/test/fixtures/Author.json',
-                title: 'Author.json',
+                url: repository + 'backend/test/fixtures/Sensor.json',
+                title: 'Sensor.json',
                 info: types.generic.data
               }
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/author/author.js',
-                title: 'author.js',
+                url: repository + 'frontend/src/app/examples/sensor/sensor.js',
+                title: 'sensor.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/author/author-controllers.js',
-                title: 'author-controllers.js',
+                url: repository + 'frontend/src/app/examples/sensor/sensor-controllers.js',
+                title: 'sensor-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/author/author-models.js',
-                title: 'author-models.js',
+                url: repository + 'frontend/src/app/examples/sensor/sensor-models.js',
+                title: 'sensor-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/author/list.html',
+                url: repository + 'frontend/src/app/examples/sensor/list.html',
                 title: 'list.html',
                 info: types.generic.template
               }
@@ -409,8 +399,8 @@
             var files = data[state];
 
             switch (state) {
-              case 'examples.books':
-              case 'examples.authors':
+              case 'examples.measurements':
+              case 'examples.sensors':
               case 'examples.chat':
                 files = _.merge(files, generic.backend, generic.frontend);
                 break;

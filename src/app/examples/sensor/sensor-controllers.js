@@ -1,38 +1,38 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.author' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.examples.sensor' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
 (function() {
   'use strict';
 
-  // Controller for new author creation.
-  angular.module('frontend.examples.author')
-    .controller('AuthorAddController', [
+  // Controller for new sensor creation.
+  angular.module('frontend.examples.sensor')
+    .controller('SensorAddController', [
       '$scope', '$state',
-      'MessageService', 'AuthorModel',
+      'MessageService', 'SensorModel',
       function controller(
         $scope, $state,
-        MessageService, AuthorModel
+        MessageService, SensorModel
       ) {
-        // Initialize author model
-        $scope.author = {
+        // Initialize sensor model
+        $scope.sensor = {
           name: '',
           description: ''
         };
 
         /**
-         * Scope function to store new author to database. After successfully save user will be redirected
-         * to view that new created author.
+         * Scope function to store new sensor to database. After successfully save user will be redirected
+         * to view that new created sensor.
          */
-        $scope.addAuthor = function addAuthor() {
-          AuthorModel
-            .create(angular.copy($scope.author))
+        $scope.addSensor = function addSensor() {
+          SensorModel
+            .create(angular.copy($scope.sensor))
             .then(
               function onSuccess(result) {
-                MessageService.success('New author added successfully');
+                MessageService.success('New sensor added successfully');
 
-                $state.go('examples.author', {id: result.data.id});
+                $state.go('examples.sensor', {id: result.data.id});
               }
             )
           ;
@@ -41,36 +41,36 @@
     ])
   ;
 
-  // Controller to show single author on GUI.
-  angular.module('frontend.examples.author')
-    .controller('AuthorController', [
+  // Controller to show single sensor on GUI.
+  angular.module('frontend.examples.sensor')
+    .controller('SensorController', [
       '$scope', '$state',
       'UserService', 'MessageService',
-      'AuthorModel', 'BookModel',
-      '_author', '_books', '_booksCount',
+      'SensorModel', 'MeasurementModel',
+      '_sensor', '_measurements', '_measurementsCount',
       function controller(
         $scope, $state,
         UserService, MessageService,
-        AuthorModel, BookModel,
-        _author, _books, _booksCount
+        SensorModel, MeasurementModel,
+        _sensor, _measurements, _measurementsCount
       ) {
         // Set current scope reference to models
-        AuthorModel.setScope($scope, 'author');
-        BookModel.setScope($scope, false, 'books', 'booksCount');
+        SensorModel.setScope($scope, 'sensor');
+        MeasurementModel.setScope($scope, false, 'measurements', 'measurementsCount');
 
         // Expose necessary data
         $scope.user = UserService.user();
-        $scope.author = _author;
-        $scope.books = _books;
-        $scope.booksCount = _booksCount.count;
+        $scope.sensor = _sensor;
+        $scope.measurements = _measurements;
+        $scope.measurementsCount = _measurementsCount.count;
 
-        // Author delete dialog buttons configuration
+        // Sensor delete dialog buttons configuration
         $scope.confirmButtonsDelete = {
           ok: {
             label: 'Delete',
             className: 'btn-danger',
             callback: function callback() {
-              $scope.deleteAuthor();
+              $scope.deleteSensor();
             }
           },
           cancel: {
@@ -79,30 +79,30 @@
           }
         };
 
-        // Scope function to save modified author.
-        $scope.saveAuthor = function saveAuthor() {
-          var data = angular.copy($scope.author);
+        // Scope function to save modified sensor.
+        $scope.saveSensor = function saveSensor() {
+          var data = angular.copy($scope.sensor);
 
           // Make actual data update
-          AuthorModel
+          SensorModel
             .update(data.id, data)
             .then(
               function onSuccess() {
-                MessageService.success('Author "' + $scope.author.name + '" updated successfully');
+                MessageService.success('Sensor "' + $scope.sensor.name + '" updated successfully');
               }
             )
           ;
         };
 
-        // Scope function to delete author
-        $scope.deleteAuthor = function deleteAuthor() {
-          AuthorModel
-            .delete($scope.author.id)
+        // Scope function to delete sensor
+        $scope.deleteSensor = function deleteSensor() {
+          SensorModel
+            .delete($scope.sensor.id)
             .then(
               function onSuccess() {
-                MessageService.success('Author "' + $scope.author.name + '" deleted successfully');
+                MessageService.success('Sensor "' + $scope.sensor.name + '" deleted successfully');
 
-                $state.go('examples.authors');
+                $state.go('examples.sensors');
               }
             )
           ;
@@ -111,23 +111,23 @@
     ])
   ;
 
-  // Controller which contains all necessary logic for author list GUI on boilerplate application.
-  angular.module('frontend.examples.author')
-    .controller('AuthorListController', [
+  // Controller which contains all necessary logic for sensor list GUI on boilerplate application.
+  angular.module('frontend.examples.sensor')
+    .controller('SensorListController', [
       '$scope', '$q', '$timeout',
       '_',
       'ListConfig',
-      'SocketHelperService', 'UserService', 'AuthorModel',
+      'SocketHelperService', 'UserService', 'SensorModel',
       '_items', '_count',
       function controller(
         $scope, $q, $timeout,
         _,
         ListConfig,
-        SocketHelperService, UserService, AuthorModel,
+        SocketHelperService, UserService, SensorModel,
         _items, _count
       ) {
         // Set current scope reference to model
-        AuthorModel.setScope($scope, false, 'items', 'itemCount');
+        SensorModel.setScope($scope, false, 'items', 'itemCount');
 
         // Add default list configuration variable to current scope
         $scope = angular.extend($scope, angular.copy(ListConfig.getConfig()));
@@ -138,7 +138,7 @@
         $scope.user = UserService.user();
 
         // Initialize used title items
-        $scope.titleItems = ListConfig.getTitleItems(AuthorModel.endpoint);
+        $scope.titleItems = ListConfig.getTitleItems(SensorModel.endpoint);
 
         // Initialize default sort data
         $scope.sort = {
@@ -167,7 +167,7 @@
         };
 
         /**
-         * Simple watcher for 'currentPage' scope variable. If this is changed we need to fetch author data
+         * Simple watcher for 'currentPage' scope variable. If this is changed we need to fetch sensor data
          * from server.
          */
         $scope.$watch('currentPage', function watcher(valueNew, valueOld) {
@@ -177,7 +177,7 @@
         });
 
         /**
-         * Simple watcher for 'itemsPerPage' scope variable. If this is changed we need to fetch author data
+         * Simple watcher for 'itemsPerPage' scope variable. If this is changed we need to fetch sensor data
          * from server.
          */
         $scope.$watch('itemsPerPage', function watcher(valueNew, valueOld) {
@@ -234,7 +234,7 @@
          *  1) Data count by given filter parameters
          *  2) Actual data fetch for current page with filter parameters
          *
-         * These are fetched via 'AuthorModel' service with promises.
+         * These are fetched via 'SensorModel' service with promises.
          *
          * @private
          */
@@ -248,14 +248,14 @@
 
           // Data query specified parameters
           var parameters = {
-            populate: 'books',
+            populate: 'measurements',
             limit: $scope.itemsPerPage,
             skip: ($scope.currentPage - 1) * $scope.itemsPerPage,
             sort: $scope.sort.column + ' ' + ($scope.sort.direction ? 'ASC' : 'DESC')
           };
 
           // Fetch data count
-          var count = AuthorModel
+          var count = SensorModel
             .count(commonParameters)
             .then(
               function onSuccess(response) {
@@ -265,7 +265,7 @@
           ;
 
           // Fetch actual data
-          var load = AuthorModel
+          var load = SensorModel
             .load(_.merge({}, commonParameters, parameters))
             .then(
               function onSuccess(response) {
