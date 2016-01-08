@@ -46,26 +46,26 @@
           measurement: [
             {
               title: 'Value',
-              column: 'value',
-              class: 'col-xs-8',
-              searchable: false,
-              sortable: true,
-              inSearch: false,
-              inTitle: true
-            },
-            {
-              title: 'Sensor',
               column: false,
-              class: 'col-xs-3',
+              class: 'col-md-1',
               searchable: false,
               sortable: false,
               inSearch: false,
               inTitle: true
             },
             {
+              title: 'Sensor',
+              column: 'sensor',
+              class: 'col-md-9',
+              searchable: true,
+              sortable: true,
+              inSearch: false,
+              inTitle: true
+            },
+            {
               title: 'Timestamp',
               column: 'timestamp',
-              class: 'col-xs-1 text-right',
+              class: 'col-md-2 text-right',
               searchable: true,
               sortable: true,
               inSearch: true,

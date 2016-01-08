@@ -52,17 +52,17 @@
         <tr
             data-ng-repeat="measurement in items"
         >
-            <td class="col-md-9">
+            <td class="col-md-1">
                 <a data-ui-sref="details.measurement({id: measurement.id})">{{measurement.value}}</a>
             </td>
-            <td class="col-md-2">
+            <td class="col-md-9">
                 <a data-ui-sref="details.sensor({id: getSensor(measurement.sensor, 'id')})"
                    data-ng-show="getSensor(measurement.sensor, 'id', true) !== true"
                 >
                     {{getSensor(measurement.sensor, 'name')}}
                 </a>
             </td>
-            <td class="col-md-1 text-right">{{measurement.timestamp | amDateFormat: 'YYYY'}}</td>
+            <td class="col-md-2 text-right">{{measurement.timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}</td>
         </tr>
 
         <tr data-ng-if="items.length === 0">
