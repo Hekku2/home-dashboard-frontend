@@ -1,7 +1,8 @@
 {
   "name": "frontend",
-  "version": "0.2.0",
   "private": true,
+  "version": "0.0.1",
+  "description": "Frontend server of home-dasboard",
   "scripts": {
     "start": "gulp watch",
     "test": "gulp test",
