@@ -13,8 +13,8 @@
       function factory(AccessLevels) {
         return [
           {
-            state: 'details.about',
-            title: 'About',
+            state: 'details.overview',
+            title: 'Overview',
             access: AccessLevels.anon
           },
           {

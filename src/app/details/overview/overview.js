@@ -1,27 +1,27 @@
 /**
- * Angular module for frontend.details.about component. Basically this file contains actual angular module initialize
+ * Angular module for frontend.details.overview component. Basically this file contains actual angular module initialize
  * and route definitions for this module.
  */
 (function() {
   'use strict';
 
   // Define frontend.public module
-  angular.module('frontend.details.about', []);
+  angular.module('frontend.details.overview', []);
 
   // Module configuration
-  angular.module('frontend.details.about')
+  angular.module('frontend.details.overview')
     .config([
       '$stateProvider',
       function($stateProvider) {
         $stateProvider
-          .state('details.about', {
-            url: '/about',
+          .state('details.overview', {
+            url: '/overview',
             data: {
               access: 0
             },
             views: {
               'content@': {
-                templateUrl: '/frontend/details/about/about.html'
+                templateUrl: '/frontend/details/overview/overview.html'
               },
               'pageNavigation@': false
             }

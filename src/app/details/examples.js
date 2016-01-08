@@ -1,7 +1,7 @@
 /**
  * Angular module for details component. This component is divided to following logical components:
  *
- *  frontend.details.about
+ *  frontend.details.overview
  *  frontend.details.sensor
  *  frontend.details.measurement
  *
@@ -12,7 +12,7 @@
 
   // Define frontend.admin module
   angular.module('frontend.details', [
-    'frontend.details.about',
+    'frontend.details.overview',
     'frontend.details.sensor',
     'frontend.details.measurement'
   ]);

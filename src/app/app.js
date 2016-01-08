@@ -108,8 +108,8 @@
           })
         ;
 
-        // For any unmatched url, redirect to /about
-        $urlRouterProvider.otherwise('/about');
+        // For any unmatched url, redirect to /overview
+        $urlRouterProvider.otherwise('/overview');
       }
     ])
   ;
