@@ -40,13 +40,13 @@
         var items = {
           'details': [
             {
-              state: 'details.measurements',
-              title: 'Measurements',
+              state: 'details.sensors',
+              title: 'Sensors',
               access: AccessLevels.user
             },
             {
-              state: 'details.sensors',
-              title: 'Sensors',
+              state: 'details.measurements',
+              title: 'Measurements',
               access: AccessLevels.user
             }
           ],

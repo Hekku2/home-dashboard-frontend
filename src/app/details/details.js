@@ -33,7 +33,7 @@
                 controller: [
                   '$state',
                   function($state) {
-                    $state.go('details.measurements');
+                    $state.go('details.sensors');
                   }
                 ]
               },
