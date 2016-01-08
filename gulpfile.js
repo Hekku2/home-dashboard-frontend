@@ -215,7 +215,7 @@ gulp.task('serve', ['watch']);
 
 gulp.task('watch', ['statics', 'default'], function() {
   isWatching = true;
-
+  g.livereload.listen();
   // Initiate livereload server:
   g.livereload();
 
