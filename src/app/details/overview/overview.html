@@ -6,7 +6,7 @@
         <div class="panel-heading">{{overview[1].name}}</div>
         <div class="panel-body">
           <h3>{{overview[0].value}}</h3>
-          <span>{{overview[0].timestamp}}</span>
+          <span>{{overview[0].timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}</span>
         </div>
 
       </div>
