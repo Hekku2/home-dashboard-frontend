@@ -4,7 +4,7 @@
     <div class="col-xs-6 pull-right list-search">
         <a
             data-ng-if="user.admin"
-            data-ui-sref="examples.measurement.add"
+            data-ui-sref="details.measurement.add"
             data-tooltip="Add new measurement"
         ><i class="fa fa-plus-circle"></i></a>
 
@@ -53,10 +53,10 @@
             data-ng-repeat="measurement in items"
         >
             <td class="col-md-9">
-                <a data-ui-sref="examples.measurement({id: measurement.id})">{{measurement.value}}</a>
+                <a data-ui-sref="details.measurement({id: measurement.id})">{{measurement.value}}</a>
             </td>
             <td class="col-md-2">
-                <a data-ui-sref="examples.sensor({id: getSensor(measurement.sensor, 'id')})"
+                <a data-ui-sref="details.sensor({id: getSensor(measurement.sensor, 'id')})"
                    data-ng-show="getSensor(measurement.sensor, 'id', true) !== true"
                 >
                     {{getSensor(measurement.sensor, 'name')}}

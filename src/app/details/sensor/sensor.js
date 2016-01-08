@@ -5,26 +5,26 @@
  *  Controllers
  *  Models
  *
- * All of these are wrapped to 'frontend.examples.sensor' angular module.
+ * All of these are wrapped to 'frontend.details.sensor' angular module.
  */
 (function() {
   'use strict';
 
-  // Define frontend.examples.sensor angular module
-  angular.module('frontend.examples.sensor', []);
+  // Define frontend.details.sensor angular module
+  angular.module('frontend.details.sensor', []);
 
   // Module configuration
-  angular.module('frontend.examples.sensor')
+  angular.module('frontend.details.sensor')
     .config([
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
           // Sensors list
-          .state('examples.sensors', {
-            url: '/examples/sensors',
+          .state('details.sensors', {
+            url: '/details/sensors',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/sensor/list.html',
+                templateUrl: '/frontend/details/sensor/list.html',
                 controller: 'SensorListController',
                 resolve: {
                   _items: [
@@ -57,11 +57,11 @@
           })
 
           // Single sensor
-          .state('examples.sensor', {
-            url: '/examples/sensor/:id',
+          .state('details.sensor', {
+            url: '/details/sensor/:id',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/sensor/sensor.html',
+                templateUrl: '/frontend/details/sensor/sensor.html',
                 controller: 'SensorController',
                 resolve: {
                   _sensor: [
@@ -100,14 +100,14 @@
           })
 
           // Add new sensor
-          .state('examples.sensor.add', {
-            url: '/examples/sensor/add',
+          .state('details.sensor.add', {
+            url: '/details/sensor/add',
             data: {
               access: 2
             },
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/sensor/add.html',
+                templateUrl: '/frontend/details/sensor/add.html',
                 controller: 'SensorAddController'
               }
             }

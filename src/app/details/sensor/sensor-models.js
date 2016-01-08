@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular model definitions for 'frontend.examples.sensor' module.
+ * This file contains all necessary Angular model definitions for 'frontend.details.sensor' module.
  *
  * Note that this file should only contain models and nothing else. Also note that these "models" are just basically
  * services that wraps all things together.
@@ -10,7 +10,7 @@
   /**
    * Model for Sensor API, this is used to wrap all Sensor objects specified actions and data change actions.
    */
-  angular.module('frontend.examples.sensor')
+  angular.module('frontend.details.sensor')
     .service('SensorModel', [
       'DataModel',
       function(DataModel) {

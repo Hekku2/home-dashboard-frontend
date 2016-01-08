@@ -79,7 +79,7 @@
                     <tbody>
                         <tr data-ng-repeat="measurement in measurements">
                             <td>
-                                <a data-ui-sref="examples.measurement({id: measurement.id})">{{measurement.title}}</a>
+                                <a data-ui-sref="details.measurement({id: measurement.id})">{{measurement.title}}</a>
                             </td>
                             <td class="text-right">
                                 {{measurement.timestamp | amDateFormat: 'YYYY'}}

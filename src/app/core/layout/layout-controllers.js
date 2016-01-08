@@ -30,14 +30,14 @@
 
         /**
          * Helper function to determine if menu item needs 'not-active' class or not. This is basically
-         * special case because of 'examples.about' state.
+         * special case because of 'details.about' state.
          *
          * @param   {layout.menuItem}   item    Menu item object
          *
          * @returns {boolean}
          */
         $scope.isNotActive = function isNotActive(item) {
-          return !!(item.state === 'examples' && $state.current.name === 'examples.about');
+          return !!(item.state === 'details' && $state.current.name === 'details.about');
         };
 
         /**
@@ -54,7 +54,7 @@
 
           return !!(
             (item.state === $state.current.name) ||
-            (item.state === bits[0] && $state.current.name !== 'examples.about')
+            (item.state === bits[0] && $state.current.name !== 'details.about')
           );
         };
 

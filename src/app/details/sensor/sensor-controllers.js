@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.sensor' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.details.sensor' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -7,7 +7,7 @@
   'use strict';
 
   // Controller for new sensor creation.
-  angular.module('frontend.examples.sensor')
+  angular.module('frontend.details.sensor')
     .controller('SensorAddController', [
       '$scope', '$state',
       'MessageService', 'SensorModel',
@@ -32,7 +32,7 @@
               function onSuccess(result) {
                 MessageService.success('New sensor added successfully');
 
-                $state.go('examples.sensor', {id: result.data.id});
+                $state.go('details.sensor', {id: result.data.id});
               }
             )
           ;
@@ -42,7 +42,7 @@
   ;
 
   // Controller to show single sensor on GUI.
-  angular.module('frontend.examples.sensor')
+  angular.module('frontend.details.sensor')
     .controller('SensorController', [
       '$scope', '$state',
       'UserService', 'MessageService',
@@ -102,7 +102,7 @@
               function onSuccess() {
                 MessageService.success('Sensor "' + $scope.sensor.name + '" deleted successfully');
 
-                $state.go('examples.sensors');
+                $state.go('details.sensors');
               }
             )
           ;
@@ -112,7 +112,7 @@
   ;
 
   // Controller which contains all necessary logic for sensor list GUI on boilerplate application.
-  angular.module('frontend.examples.sensor')
+  angular.module('frontend.details.sensor')
     .controller('SensorListController', [
       '$scope', '$q', '$timeout',
       '_',

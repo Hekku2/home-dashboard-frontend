@@ -10,7 +10,7 @@
   angular.module('frontend', [
     'frontend-templates',
     'frontend.core',
-    'frontend.examples',
+    'frontend.details',
     'frontend.admin'
   ]);
 

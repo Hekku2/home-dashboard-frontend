@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.measurement' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.details.measurement' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -7,7 +7,7 @@
   'use strict';
 
   // Controller for new measurement creation.
-  angular.module('frontend.examples.measurement')
+  angular.module('frontend.details.measurement')
     .controller('MeasurementAddController', [
       '$scope', '$state',
       'MessageService',
@@ -40,7 +40,7 @@
               function onSuccess(result) {
                 MessageService.success('New measurement added successfully');
 
-                $state.go('examples.measurement', {id: result.data.id});
+                $state.go('details.measurement', {id: result.data.id});
               }
             )
           ;
@@ -50,7 +50,7 @@
   ;
 
   // Controller to show single measurement on GUI.
-  angular.module('frontend.examples.measurement')
+  angular.module('frontend.details.measurement')
     .controller('MeasurementController', [
       '$scope', '$state',
       'UserService', 'MessageService',
@@ -118,7 +118,7 @@
               function onSuccess() {
                 MessageService.success('Measurement "' + $scope.measurement.title + '" deleted successfully');
 
-                $state.go('examples.measurements');
+                $state.go('details.measurements');
               }
             )
           ;
@@ -149,7 +149,7 @@
   ;
 
   // Controller which contains all necessary logic for measurement list GUI on boilerplate application.
-  angular.module('frontend.examples.measurement')
+  angular.module('frontend.details.measurement')
     .controller('MeasurementListController', [
       '$scope', '$q', '$timeout',
       '_',

@@ -13,13 +13,13 @@
       function factory(AccessLevels) {
         return [
           {
-            state: 'examples.about',
+            state: 'details.about',
             title: 'About',
             access: AccessLevels.anon
           },
           {
-            state: 'examples',
-            title: 'Examples',
+            state: 'details',
+            title: 'Details',
             access: AccessLevels.user
           },
           {
@@ -38,14 +38,14 @@
       'AccessLevels',
       function factory(AccessLevels) {
         var items = {
-          'examples': [
+          'details': [
             {
-              state: 'examples.measurements',
+              state: 'details.measurements',
               title: 'Measurements',
               access: AccessLevels.user
             },
             {
-              state: 'examples.sensors',
+              state: 'details.sensors',
               title: 'Sensors',
               access: AccessLevels.user
             }
@@ -218,7 +218,7 @@
          * @type    {{}}
          */
         var data = {
-          'examples.measurements': {
+          'details.measurements': {
             'Backend': [
               {
                 url: repository + 'backend/api/models/Measurement.js',
@@ -238,28 +238,28 @@
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/measurement/measurement.js',
+                url: repository + 'frontend/src/app/details/measurement/measurement.js',
                 title: 'measurement.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/measurement/measurement-controllers.js',
+                url: repository + 'frontend/src/app/details/measurement/measurement-controllers.js',
                 title: 'measurement-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/measurement/measurement-models.js',
+                url: repository + 'frontend/src/app/details/measurement/measurement-models.js',
                 title: 'measurement-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/measurement/list.html',
+                url: repository + 'frontend/src/app/details/measurement/list.html',
                 title: 'list.html',
                 info: types.generic.template
               }
             ]
           },
-          'examples.sensors': {
+          'details.sensors': {
             'Backend': [
               {
                 url: repository + 'backend/api/models/Sensor.js',
@@ -279,41 +279,41 @@
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/sensor/sensor.js',
+                url: repository + 'frontend/src/app/details/sensor/sensor.js',
                 title: 'sensor.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/sensor/sensor-controllers.js',
+                url: repository + 'frontend/src/app/details/sensor/sensor-controllers.js',
                 title: 'sensor-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/sensor/sensor-models.js',
+                url: repository + 'frontend/src/app/details/sensor/sensor-models.js',
                 title: 'sensor-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/sensor/list.html',
+                url: repository + 'frontend/src/app/details/sensor/list.html',
                 title: 'list.html',
                 info: types.generic.template
               }
             ]
           },
-          'examples.messages': {
+          'details.messages': {
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/messages/messages.js',
+                url: repository + 'frontend/src/app/details/messages/messages.js',
                 title: 'messages.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/messages/messages-controllers.js',
+                url: repository + 'frontend/src/app/details/messages/messages-controllers.js',
                 title: 'messages-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/messages/messages.html',
+                url: repository + 'frontend/src/app/details/messages/messages.html',
                 title: 'messages.html',
                 info: types.generic.template
               }
@@ -336,7 +336,7 @@
               }
             ]
           },
-          'examples.chat': {
+          'details.chat': {
             'Backend': [
               {
                 url: repository + 'backend/api/models/Message.js',
@@ -351,27 +351,27 @@
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/chat/chat.js',
+                url: repository + 'frontend/src/app/details/chat/chat.js',
                 title: 'chat.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat-controllers.js',
+                url: repository + 'frontend/src/app/details/chat/chat-controllers.js',
                 title: 'chat-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat-directives.js',
+                url: repository + 'frontend/src/app/details/chat/chat-directives.js',
                 title: 'chat-directives.js',
                 info: types.frontend.directive
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat-models.js',
+                url: repository + 'frontend/src/app/details/chat/chat-models.js',
                 title: 'chat-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat.html',
+                url: repository + 'frontend/src/app/details/chat/chat.html',
                 title: 'chat.html',
                 info: types.generic.template
               }
@@ -399,9 +399,9 @@
             var files = data[state];
 
             switch (state) {
-              case 'examples.measurements':
-              case 'examples.sensors':
-              case 'examples.chat':
+              case 'details.measurements':
+              case 'details.sensors':
+              case 'details.chat':
                 files = _.merge(files, generic.backend, generic.frontend);
                 break;
               default:

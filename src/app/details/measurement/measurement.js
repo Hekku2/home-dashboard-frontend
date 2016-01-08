@@ -4,26 +4,26 @@
  *  Controllers
  *  Models
  *
- * All of these are wrapped to 'frontend.examples.measurement' angular module.
+ * All of these are wrapped to 'frontend.details.measurement' angular module.
  */
 (function() {
   'use strict';
 
-  // Define frontend.examples.measurement angular module
-  angular.module('frontend.examples.measurement', []);
+  // Define frontend.details.measurement angular module
+  angular.module('frontend.details.measurement', []);
 
   // Module configuration
-  angular.module('frontend.examples.measurement')
+  angular.module('frontend.details.measurement')
     .config([
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
           // Measurement list
-          .state('examples.measurements', {
-            url: '/examples/measurements',
+          .state('details.measurements', {
+            url: '/details/measurements',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/measurement/list.html',
+                templateUrl: '/frontend/details/measurement/list.html',
                 controller: 'MeasurementListController',
                 resolve: {
                   _items: [
@@ -61,11 +61,11 @@
           })
 
           // Single measurement
-          .state('examples.measurement', {
-            url: '/examples/measurement/:id',
+          .state('details.measurement', {
+            url: '/details/measurement/:id',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/measurement/measurement.html',
+                templateUrl: '/frontend/details/measurement/measurement.html',
                 controller: 'MeasurementController',
                 resolve: {
                   _measurement: [
@@ -84,14 +84,14 @@
           })
 
           // Add new measurement
-          .state('examples.measurement.add', {
-            url: '/examples/measurement/add',
+          .state('details.measurement.add', {
+            url: '/details/measurement/add',
             data: {
               access: 2
             },
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/measurement/add.html',
+                templateUrl: '/frontend/details/measurement/add.html',
                 controller: 'MeasurementAddController',
                 resolve: {
                   _sensors: [

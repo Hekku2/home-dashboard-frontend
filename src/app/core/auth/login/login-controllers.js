@@ -27,7 +27,7 @@
       ) {
         // Already authenticated so redirect back to measurements list
         if (AuthService.isAuthenticated()) {
-          $state.go('examples.measurements');
+          $state.go('details.measurements');
         }
 
         // Scope function to perform actual login request to server
@@ -36,7 +36,7 @@
             .login($scope.credentials)
             .then(
               function successCallback() {
-                $state.go('examples.measurements');
+                $state.go('details.measurements');
               },
               function errorCallback() {
                 _reset();
