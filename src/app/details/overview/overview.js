@@ -21,7 +21,20 @@
             },
             views: {
               'content@': {
-                templateUrl: '/frontend/details/overview/overview.html'
+                templateUrl: '/frontend/details/overview/overview.html',
+                controller: 'OverviewController',
+                resolve: {
+                  _items: [
+                    'ListConfig',
+                    'SensorOverviewModel',
+                    function resolve(
+                      ListConfig,
+                      SensorOverviewModel
+                    ) {
+                      return SensorOverviewModel.load();
+                    }
+                  ]
+                }
               },
               'pageNavigation@': false
             }
