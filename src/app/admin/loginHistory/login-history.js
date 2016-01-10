@@ -2,6 +2,7 @@
  * Login history component. This component is divided to following logical components:
  *
  *  Controllers
+ *  Models
  *
  * All of these are wrapped to 'frontend.admin.login-history' angular module. This also contains necessary route
  * definitions for this module.
