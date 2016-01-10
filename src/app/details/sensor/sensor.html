@@ -68,21 +68,21 @@
                 <table class="table table-condensed table-hover">
                     <thead>
                         <tr>
-                            <th class="col-xs-11">
-                                Title
+                            <th class="col-xs-8">
+                                Value
                             </th>
-                            <th class="col-xs-1 text-nowrap">
-                                Release year
+                            <th class="col-xs-4 text-right">
+                                Timestamp
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr data-ng-repeat="measurement in measurements">
                             <td>
-                                <a data-ui-sref="details.measurement({id: measurement.id})">{{measurement.title}}</a>
+                                {{measurement.value}} {{sensor.unit}}
                             </td>
                             <td class="text-right">
-                                {{measurement.timestamp | amDateFormat: 'YYYY'}}
+                                {{measurement.timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}
                             </td>
                         </tr>
                     </tbody>
