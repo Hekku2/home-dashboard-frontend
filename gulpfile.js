@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var replace = require('gulp-replace-task');
 var fs = require('fs');
+var karma = require("gulp-karma-runner");
 var g = require('gulp-load-plugins')({lazy: false});
 var noop = g.util.noop;
 var es = require('event-stream');
@@ -106,7 +107,7 @@ gulp.task('templates-dist', function() {
  * Vendors
  */
 gulp.task('vendors', function() {
-  var bowerStream = mainBowerFiles();
+  var bowerStream = gulp.src(mainBowerFiles({read: false}));
 
   return es.merge(
     bowerStream.pipe(g.filter('**/*.css')).pipe(dist('css', 'vendors')),
@@ -249,7 +250,7 @@ gulp.task('lint', ['jshint', 'csslint', 'scsslint']);
  */
 gulp.task('test', ['templates'], function() {
   return testFiles()
-    .pipe(g.karma({
+    .pipe(karma.server({
       configFile: __dirname + '/karma.conf.js',
       singleRun: true
     }))
