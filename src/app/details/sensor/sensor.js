@@ -81,7 +81,10 @@
                       $stateParams,
                       MeasurementModel
                     ) {
-                      return MeasurementModel.load({sensor: $stateParams.id});
+                      return MeasurementModel.load({
+                        sensor: $stateParams.id,
+                        sort: 'timestamp DESC'
+                      });
                     }
                   ],
                   _measurementsCount: [
