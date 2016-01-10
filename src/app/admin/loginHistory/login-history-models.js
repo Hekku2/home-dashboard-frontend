@@ -8,7 +8,7 @@
   'use strict';
 
   /**
-   * Model for Measurement API, this is used to wrap all Measurement objects specified actions and data change actions.
+   * Model for Login history API, this is used to wrap all Login history objects specified actions and data change actions.
    */
   angular.module('frontend.admin.login-history')
     .factory('LoginHistoryModel', [
