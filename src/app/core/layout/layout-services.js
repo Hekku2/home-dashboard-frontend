@@ -43,11 +43,6 @@
               state: 'details.sensors',
               title: 'Sensors',
               access: AccessLevels.user
-            },
-            {
-              state: 'details.measurements',
-              title: 'Measurements',
-              access: AccessLevels.user
             }
           ],
           'admin': [
