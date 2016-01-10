@@ -81,6 +81,26 @@
               inTitle: true
             }
           ],
+          user: [
+            {
+              title: 'Username',
+              column: 'username',
+              class: 'col-md-4',
+              searchable: false,
+              sortable: false,
+              inSearch: false,
+              inTitle: true
+            },
+            {
+              title: 'Name',
+              column: 'lastname',
+              class: 'col-md-8',
+              searchable: true,
+              sortable: true,
+              inSearch: false,
+              inTitle: true
+            }
+          ],
           userlogin: [
             {
               title: 'IP-address',
