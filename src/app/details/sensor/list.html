@@ -50,9 +50,10 @@
     </thead>
     <tbody>
         <tr data-ng-repeat="sensor in items">
-            <td class="col-md-11">
+            <td class="col-md-10">
                 <a data-ui-sref="details.sensor({id: sensor.id})">{{sensor.name}}</a>
             </td>
+          <td class="col-md-1">{{sensor.unit}}</td>
             <td class="col-md-1 text-right">{{sensor.measurements.length}}</td>
         </tr>
 

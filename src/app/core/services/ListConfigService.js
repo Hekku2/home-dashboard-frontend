@@ -27,6 +27,15 @@
             {
               title: 'Sensor',
               column: 'name',
+              class: 'col-xs-10',
+              searchable: true,
+              sortable: true,
+              inSearch: true,
+              inTitle: true
+            },
+            {
+              title: 'Unit',
+              column: 'unit',
               class: 'col-xs-11',
               searchable: true,
               sortable: true,
