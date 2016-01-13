@@ -79,3 +79,8 @@ Then head to `http://localhost:3000` in your browser.
 
 ## License
 The MIT License (MIT)
+
+## License
+The MIT License (MIT)
+
+Based on tarlepp's [angular-sailsjs-boilerplate-frontend](https://github.com/tarlepp/angular-sailsjs-boilerplate-frontend)
