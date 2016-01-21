@@ -44,12 +44,12 @@
   // Controller to show single sensor on GUI.
   angular.module('frontend.details.sensor')
     .controller('SensorController', [
-      '$scope', '$state',
+      '$scope', '$state', '_', 'moment',
       'UserService', 'MessageService',
       'SensorModel', 'MeasurementModel',
       '_sensor', '_measurements', '_measurementsCount',
       function controller(
-        $scope, $state,
+        $scope, $state, _, moment,
         UserService, MessageService,
         SensorModel, MeasurementModel,
         _sensor, _measurements, _measurementsCount
@@ -107,6 +107,33 @@
             )
           ;
         };
+
+        var times = _.range(24).map(function(x, i){
+          return moment().subtract(24-i-1, 'hours');
+        });
+
+        var labels = times.map(function(time){
+          return time.format('HH:mm');
+        });
+
+        var data = times.map(function(time){
+          var measurementsInRange = _.filter(_measurements, function(measurement){
+            return Math.abs(moment(measurement.timestamp).diff(time)) < 1800000;
+          });
+
+          console.log(measurementsInRange.length);
+          if (measurementsInRange.length === 0)
+          {
+            return 0;
+          }
+
+          var total = _.sumBy(measurementsInRange, function(item){return item.value;});
+          return total / measurementsInRange.length;
+        });
+
+        $scope.labels = labels;
+        $scope.data = [data];
+        $scope.series = ['Temperatures'];
       }
     ])
   ;

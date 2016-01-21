@@ -11,7 +11,7 @@
   'use strict';
 
   // Define frontend.details.sensor angular module
-  angular.module('frontend.details.sensor', []);
+  angular.module('frontend.details.sensor', ['chart.js']);
 
   // Module configuration
   angular.module('frontend.details.sensor')
