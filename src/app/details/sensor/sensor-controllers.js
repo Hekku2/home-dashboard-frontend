@@ -121,7 +121,6 @@
             return Math.abs(moment(measurement.timestamp).diff(time)) < 1800000;
           });
 
-          console.log(measurementsInRange.length);
           if (measurementsInRange.length === 0)
           {
             return 0;
