@@ -3,11 +3,11 @@
 <div class="row">
     <div class="col-sm-4" data-ng-repeat="overview in currentValues">
       <div class="panel panel-default">
-        <div class="panel-heading">{{overview[1].name}}</div>
+        <div class="panel-heading">{{overview.sensor.name}}</div>
         <div class="panel-body">
-          <h3>{{overview[0].value}}{{overview[1].unit}}</h3>
-          <span>{{overview[0].timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}</span>
-          <span>{{overview[1].group.name}}</span>
+          <h3>{{overview.measurement.value}}{{overview.sensor.unit}}</h3>
+          <span>{{overview.measurement.timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}</span>
+          <span>{{overview.sensor.group.name}}</span>
         </div>
 
       </div>
