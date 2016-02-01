@@ -37,7 +37,7 @@
                       var config = ListConfig.getConfig();
 
                       var parameters = {
-                        populate: 'measurements',
+                        populate: 'measurements,group',
                         limit: config.itemsPerPage,
                         sort: 'name ASC'
                       };
