@@ -97,10 +97,6 @@
               header: {
                 templateUrl: '/frontend/core/layout/partials/header.html',
                 controller: 'HeaderController'
-              },
-              footer: {
-                templateUrl: '/frontend/core/layout/partials/footer.html',
-                controller: 'FooterController'
               }
             }
           })

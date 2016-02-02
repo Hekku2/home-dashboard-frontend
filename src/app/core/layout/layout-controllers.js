@@ -65,21 +65,6 @@
   ;
 
   /**
-   * Generic footer controller for application layout. This contains all necessary logic which is used on application
-   * footer section. Basically this contains following:
-   *
-   *  1) Generic links
-   *  2) Version info parsing (back- and frontend)
-   */
-  angular.module('frontend.core.layout')
-    .controller('FooterController', [
-      function controller() {
-        // TODO: add version info parsing
-      }
-    ])
-  ;
-
-  /**
    * Generic navigation controller for application layout. This contains all necessary logic for pages sub-navigation
    * section. Basically this handles following:
    *

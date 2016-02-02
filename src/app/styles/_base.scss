@@ -41,45 +41,6 @@ header .navbar-nav {
   float: none;
 }
 
-footer {
-  .navbar {
-    max-height: 25px;
-    min-height: 25px;
-    text-align: center;
-
-    .navbar-nav {
-      float: none;
-
-      > li {
-        display: inline-block;
-        float: none;
-
-        > a {
-          font-size: 11px;
-          line-height: 25px;
-          padding: 0 10px;
-
-          .fa {
-            color: $color-footer-text;
-            font-size: 14px;
-            margin-right: 3px;
-            position: relative;
-            top: 1px;
-          }
-
-          &:hover {
-            color: $color-footer-hover-text;
-
-            .fa {
-              color: $color-footer-hover-icons;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 .no-select {
   @include no-select();
 }
