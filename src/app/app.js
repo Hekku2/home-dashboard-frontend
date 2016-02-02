@@ -11,7 +11,8 @@
     'frontend-templates',
     'frontend.core',
     'frontend.details',
-    'frontend.admin'
+    'frontend.admin',
+    'frontend.profile'
   ]);
 
   /**
@@ -71,22 +72,6 @@
             requireBase: false
           })
           .hashPrefix('!')
-        ;
-
-        // Routes that needs authenticated user
-        $stateProvider
-          .state('profile', {
-            abstract: true,
-            template: '<ui-view/>',
-            data: {
-              access: AccessLevels.user
-            }
-          })
-          .state('profile.edit', {
-            url: '/profile',
-            templateUrl: '/frontend/profile/profile.html',
-            controller: 'ProfileController'
-          })
         ;
 
         // Main state provider for frontend application

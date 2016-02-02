@@ -1,0 +1,16 @@
+<div data-ng-show="!user">
+  <h3>Requested user not found</h3>
+</div>
+<div data-ng-show="user">
+  <form class="form-vertical" role="form">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>
+          <span style="width: 100%;">
+            {{user.username}}
+          </span>
+        </h3>
+      </div>
+    </div>
+  </form>
+</div>
