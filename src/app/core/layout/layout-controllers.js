@@ -78,54 +78,6 @@
       function controller($scope, $state, $modal,
                           _items) {
         $scope.navigationItems = _items;
-
-        // Helper function to open information modal about current GUI.
-        $scope.openInformation = function openInformation() {
-          $modal.open({
-            templateUrl: '/frontend/core/layout/partials/help.html',
-            controller: 'NavigationModalController',
-            size: 'lg',
-            resolve: {
-              '_title': function resolve() {
-                return $state.current.name.toString();
-              },
-              '_files': [
-                'NavigationInfoModalFiles',
-                function resolve(NavigationInfoModalFiles) {
-                  return NavigationInfoModalFiles.get($state.current.name.toString());
-                }
-              ],
-              '_template': function resolve() {
-                return $state.current.views['content@'].templateUrl.replace('.html', '-info.html');
-              }
-            }
-          });
-        };
-      }
-    ])
-  ;
-
-  /**
-   * Controller for navigation info modal. This is used to show GUI specified detailed information about how those
-   * are done (links to sources + generic information / description).
-   */
-  angular.module('frontend.core.layout')
-    .controller('NavigationModalController', [
-      '$scope', '$modalInstance',
-      'BackendConfig',
-      '_title', '_files', '_template',
-      function ($scope, $modalInstance,
-                BackendConfig,
-                _title, _files, _template) {
-        $scope.title = _title;
-        $scope.files = _files;
-        $scope.template = _template;
-        $scope.backendConfig = BackendConfig;
-
-        // Dismiss function for modal
-        $scope.dismiss = function dismiss() {
-          $modalInstance.dismiss();
-        };
       }
     ])
   ;
