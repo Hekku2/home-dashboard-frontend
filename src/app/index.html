@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html data-ng-app="frontend">
-    <head>
-        <meta charset="utf-8"/>
-        <title>Home dashboard</title>
+<head>
+  <meta charset="utf-8"/>
+  <title>Home dashboard</title>
 
-        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
 
-        <!-- inject:vendor:css -->
-        <!-- endinject -->
+  <!-- inject:vendor:css -->
+  <!-- endinject -->
 
-        <!-- inject:css -->
-        <!-- endinject -->
-    </head>
-    <body data-ng-cloak class="ng-cloak">
-        <div data-ui-view="header"></div>
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body data-ng-cloak class="ng-cloak">
+<div data-ui-view="header"></div>
 
-        <div id="container" class="container main-container">
-            <div data-ui-view="pageNavigation"></div>
-            <div data-ui-view="content"></div>
-        </div>
+<div id="container" class="container main-container">
+  <div data-ui-view="pageNavigation"></div>
+  <div data-ui-view="content"></div>
+</div>
 
-        <div data-ui-view="footer"></div>
+<div data-ui-view="footer"></div>
 
-        <script>
-            (function onLoad() {
-                var io;
+<script>
+  (function onLoad() {
+    var io;
 
-                Object.defineProperty(window, 'io', {
-                    get: function get() {
-                        return io;
-                    },
-                    set: function set(value) {
-                        var sails;
+    Object.defineProperty(window, 'io', {
+      get: function get() {
+        return io;
+      },
+      set: function set(value) {
+        var sails;
 
-                        io = value;
+        io = value;
 
-                        Object.defineProperty(io, 'sails', {
-                            get: function get() {
-                                return sails;
-                            },
-                            set: function set(value) {
-                                sails = value;
+        Object.defineProperty(io, 'sails', {
+          get: function get() {
+            return sails;
+          },
+          set: function set(value) {
+            sails = value;
 
-                                sails.url = '@@backendUrl';
-                            }
-                        });
-                    }
-                });
-            })();
-        </script>
+            sails.url = '@@backendUrl';
+          }
+        });
+      }
+    });
+  })();
+</script>
 
-        <!-- inject:vendor:js -->
-        <!-- endinject -->
+<!-- inject:vendor:js -->
+<!-- endinject -->
 
-        <!-- inject:js -->
-        <!-- endinject -->
-    </body>
+<!-- inject:js -->
+<!-- endinject -->
+</body>
 </html>

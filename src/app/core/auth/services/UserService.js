@@ -22,7 +22,7 @@
  *
  * Happy coding!
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.auth.services')

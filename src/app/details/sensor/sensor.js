@@ -7,7 +7,7 @@
  *
  * All of these are wrapped to 'frontend.details.sensor' angular module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.details.sensor angular module
@@ -19,7 +19,7 @@
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
-          // Sensors list
+        // Sensors list
           .state('details.sensors', {
             url: '/details/sensors',
             views: {
@@ -30,10 +30,8 @@
                   _items: [
                     'ListConfig',
                     'SensorModel',
-                    function resolve(
-                      ListConfig,
-                      SensorModel
-                    ) {
+                    function resolve(ListConfig,
+                                     SensorModel) {
                       var config = ListConfig.getConfig();
 
                       var parameters = {
@@ -67,20 +65,16 @@
                   _sensor: [
                     '$stateParams',
                     'SensorModel',
-                    function resolve(
-                      $stateParams,
-                      SensorModel
-                    ) {
+                    function resolve($stateParams,
+                                     SensorModel) {
                       return SensorModel.fetch($stateParams.id, {populate: 'group'});
                     }
                   ],
                   _measurements: [
                     '$stateParams',
                     'MeasurementModel',
-                    function resolve(
-                      $stateParams,
-                      MeasurementModel
-                    ) {
+                    function resolve($stateParams,
+                                     MeasurementModel) {
                       return MeasurementModel.load({
                         sensor: $stateParams.id,
                         sort: 'timestamp DESC'
@@ -90,10 +84,8 @@
                   _measurementsCount: [
                     '$stateParams',
                     'MeasurementModel',
-                    function resolve(
-                      $stateParams,
-                      MeasurementModel
-                    ) {
+                    function resolve($stateParams,
+                                     MeasurementModel) {
                       return MeasurementModel.count({sensor: $stateParams.id});
                     }
                   ]

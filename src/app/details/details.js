@@ -7,7 +7,7 @@
  *
  * Each component has it own configuration for ui-router.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.admin module
@@ -21,7 +21,7 @@
   angular.module('frontend.details')
     .config([
       '$stateProvider',
-      function($stateProvider) {
+      function ($stateProvider) {
         $stateProvider
           .state('details', {
             parent: 'frontend',
@@ -32,7 +32,7 @@
               'content@': {
                 controller: [
                   '$state',
-                  function($state) {
+                  function ($state) {
                     $state.go('details.sensors');
                   }
                 ]

@@ -5,7 +5,7 @@
  * Also note that this module have to be loaded before any other application modules that have dependencies to these
  * "core" modules.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.dependencies', [

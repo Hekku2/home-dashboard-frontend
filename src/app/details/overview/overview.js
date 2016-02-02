@@ -2,7 +2,7 @@
  * Angular module for frontend.details.overview component. Basically this file contains actual angular module initialize
  * and route definitions for this module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.public module
@@ -12,7 +12,7 @@
   angular.module('frontend.details.overview')
     .config([
       '$stateProvider',
-      function($stateProvider) {
+      function ($stateProvider) {
         $stateProvider
           .state('details.overview', {
             url: '/overview',
@@ -27,10 +27,8 @@
                   _items: [
                     'ListConfig',
                     'SensorOverviewModel',
-                    function resolve(
-                      ListConfig,
-                      SensorOverviewModel
-                    ) {
+                    function resolve(ListConfig,
+                                     SensorOverviewModel) {
                       return SensorOverviewModel.load();
                     }
                   ]

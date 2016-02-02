@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain directives and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   /**

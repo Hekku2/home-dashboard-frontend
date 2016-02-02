@@ -1,5 +1,5 @@
 // Generic models angular module initialize.
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.libraries', []);

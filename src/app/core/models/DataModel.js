@@ -3,7 +3,7 @@
  * given event handlers. Basically all of this boilerplate application individual models are using this service to
  * generate real model.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.models')
@@ -11,18 +11,16 @@
       '$sailsSocket', '$log',
       '_',
       'DataService',
-      function(
-        $sailsSocket, $log,
-        _,
-        DataService
-      ) {
+      function ($sailsSocket, $log,
+                _,
+                DataService) {
         /**
          * Constructor for actual data model.
          *
          * @param   {string}  [endpoint]  Name of the API endpoint
          * @constructor
          */
-        var DataModel = function(endpoint) {
+        var DataModel = function (endpoint) {
           // Initialize default values.
           this.object = {};
           this.objects = [];
@@ -256,7 +254,7 @@
                 $log.error('DataModel.count() failed.', error, self.endpoint, parameters);
               }
             )
-          ;
+            ;
         };
 
         /**
@@ -300,7 +298,7 @@
                 $log.error('DataModel.load() failed.', error, self.endpoint, parameters);
               }
             )
-          ;
+            ;
         };
 
         /**
@@ -347,7 +345,7 @@
                 $log.error('DataModel.fetch() failed.', error, self.endpoint, identifier, parameters);
               }
             )
-          ;
+            ;
         };
 
         /**
@@ -372,7 +370,7 @@
                 $log.error('DataModel.create() failed.', error, self.endpoint, data);
               }
             )
-          ;
+            ;
         };
 
         /**
@@ -398,7 +396,7 @@
                 $log.error('DataModel.update() failed.', error, self.endpoint, identifier, data);
               }
             )
-          ;
+            ;
         };
 
         /**
@@ -423,7 +421,7 @@
                 $log.error('DataModel.delete() failed.', error, self.endpoint, identifier);
               }
             )
-          ;
+            ;
         };
 
         /**

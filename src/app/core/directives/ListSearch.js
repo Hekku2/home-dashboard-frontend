@@ -32,7 +32,7 @@
  *      data-items="itemsPerPage"
  *  ></list-search>
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.directives')

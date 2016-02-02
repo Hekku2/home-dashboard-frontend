@@ -4,7 +4,7 @@
  * Note that 'BackendConfig.url' is configured in /frontend/config/config.json file and you _must_ change it to match
  * your backend API url.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend')

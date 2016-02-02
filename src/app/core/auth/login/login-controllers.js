@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain controllers and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   /**
@@ -21,10 +21,8 @@
     .controller('LoginController', [
       '$scope', '$state',
       'AuthService', 'FocusOnService',
-      function controller(
-        $scope, $state,
-        AuthService, FocusOnService
-      ) {
+      function controller($scope, $state,
+                          AuthService, FocusOnService) {
         // Already authenticated so redirect back to measurements list
         if (AuthService.isAuthenticated()) {
           $state.go('details.overview');

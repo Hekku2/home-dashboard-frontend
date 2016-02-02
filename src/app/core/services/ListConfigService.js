@@ -7,7 +7,7 @@
  *
  * @todo text translations
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.services')

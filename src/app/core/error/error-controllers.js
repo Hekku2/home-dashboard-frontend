@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain controllers and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   /**
@@ -14,11 +14,9 @@
       '$scope', '$state',
       '_',
       '_error',
-      function controller(
-        $scope, $state,
-        _,
-        _error
-      ) {
+      function controller($scope, $state,
+                          _,
+                          _error) {
         if (_.isUndefined(_error)) {
           return $state.go('auth.login');
         }

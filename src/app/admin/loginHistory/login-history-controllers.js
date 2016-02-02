@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain controllers and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.admin.login-history')
@@ -14,14 +14,12 @@
       'SocketHelperService',
       'LoginHistoryModel',
       '_items', '_count', '_statsBrowser', '_statsOS', '_statsUser',
-      function controller(
-        $scope, $timeout, $q, $filter,
-        _,
-        ListConfig,
-        SocketHelperService,
-        LoginHistoryModel,
-        _items, _count, _statsBrowser, _statsOS, _statsUser
-      ) {
+      function controller($scope, $timeout, $q, $filter,
+                          _,
+                          ListConfig,
+                          SocketHelperService,
+                          LoginHistoryModel,
+                          _items, _count, _statsBrowser, _statsOS, _statsUser) {
         // Set current scope reference to models
         LoginHistoryModel.setScope($scope, false, 'items', 'itemCount');
 
@@ -76,7 +74,7 @@
                 return '<strong>' + this.key + '</strong><br />' +
                   'Percentage: ' + $filter('number')(this.point.percentage, 2) + '%<br />' +
                   'Total: ' + $filter('number')(this.y)
-                ;
+                  ;
               },
               pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             }
@@ -255,7 +253,7 @@
                 $scope.itemCount = response.count;
               }
             )
-          ;
+            ;
 
           // Fetch actual data
           var load = LoginHistoryModel
@@ -265,7 +263,7 @@
                 $scope.items = response;
               }
             )
-          ;
+            ;
 
           // Load all needed data
           $q

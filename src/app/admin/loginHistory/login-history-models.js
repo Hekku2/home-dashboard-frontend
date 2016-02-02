@@ -14,10 +14,8 @@
     .factory('LoginHistoryModel', [
       '$log',
       'DataModel', 'DataService',
-      function factory(
-        $log,
-        DataModel, DataService
-      ) {
+      function factory($log,
+                       DataModel, DataService) {
         var model = new DataModel('userlogin');
 
         model.statistics = function statistics(type) {
@@ -33,7 +31,7 @@
                 $log.error('LoginHistoryModel.statistics() failed.', error, self.endpoint, type);
               }
             )
-          ;
+            ;
         };
 
         return model;

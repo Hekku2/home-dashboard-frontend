@@ -6,7 +6,7 @@
  *
  * @todo add more these helpers :D
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.services')

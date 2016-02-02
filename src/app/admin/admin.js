@@ -6,7 +6,7 @@
  *
  * Also this file contains all necessary information about 'frontend.admin' module route definitions.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.admin module
@@ -30,7 +30,7 @@
               'content@': {
                 controller: [
                   '$state',
-                  function($state) {
+                  function ($state) {
                     $state.go('admin.login-history');
                   }
                 ]

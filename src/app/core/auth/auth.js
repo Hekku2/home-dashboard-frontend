@@ -4,7 +4,7 @@
  *  frontend.core.auth.login
  *  frontend.core.auth.services
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.auth module

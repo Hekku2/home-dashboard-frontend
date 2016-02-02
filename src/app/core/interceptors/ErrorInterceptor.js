@@ -5,13 +5,13 @@
  *
  * @todo Add option to skip showing automatic error message
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.interceptors')
     .factory('ErrorInterceptor', [
       '$q', '$injector',
-      function($q, $injector) {
+      function ($q, $injector) {
         return {
           /**
            * Interceptor method which is triggered whenever response occurs on $http queries. Note

@@ -4,7 +4,7 @@
  *
  * @link    https://stackoverflow.com/questions/14833326/how-to-set-focus-on-input-field/18295416#18295416
  */
-(function() {
+(function () {
   'use strict';
 
   /**

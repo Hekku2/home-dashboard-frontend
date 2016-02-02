@@ -13,7 +13,7 @@
  *  frontend.core.models
  *  frontend.core.services
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.core module

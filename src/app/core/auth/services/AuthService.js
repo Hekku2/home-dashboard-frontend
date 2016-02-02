@@ -40,17 +40,15 @@
  * @todo  Revoke method?
  * @todo  Text localizations?
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.auth.services')
     .factory('AuthService', [
       '$http', '$state', '$localStorage',
       'AccessLevels', 'BackendConfig', 'MessageService',
-      function factory(
-        $http, $state, $localStorage,
-        AccessLevels, BackendConfig, MessageService
-      ) {
+      function factory($http, $state, $localStorage,
+                       AccessLevels, BackendConfig, MessageService) {
         return {
           /**
            * Method to authorize current user with given access level in application.
@@ -93,13 +91,13 @@
             return $http
               .post(BackendConfig.url + '/login', credentials, {withCredentials: true})
               .then(
-                function(response) {
+                function (response) {
                   MessageService.success('You have been logged in.');
 
                   $localStorage.credentials = response.data;
                 }
               )
-            ;
+              ;
           },
 
           /**

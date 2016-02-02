@@ -16,7 +16,7 @@
  *
  * With this you can use lo-dash library easily in your controllers.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.libraries')

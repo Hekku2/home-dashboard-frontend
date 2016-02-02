@@ -5,7 +5,7 @@
  *
  * All of these are wrapped to 'frontend.details.measurement' angular module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.details.measurement angular module

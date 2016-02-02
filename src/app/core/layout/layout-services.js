@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain services and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   // Generic service to return all available menu items for main level navigation.

@@ -10,7 +10,7 @@
   angular.module('frontend.admin.users')
     .service('UsersModel', [
       'DataModel',
-      function(DataModel) {
+      function (DataModel) {
         return new DataModel('user');
       }
     ])

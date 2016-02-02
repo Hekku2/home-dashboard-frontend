@@ -5,7 +5,7 @@
  *
  * All of these are wrapped to 'frontend.auth.login' angular module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.auth.login angular module
@@ -17,7 +17,7 @@
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
-          // Login
+        // Login
           .state('auth.login', {
             url: '/login',
             data: {

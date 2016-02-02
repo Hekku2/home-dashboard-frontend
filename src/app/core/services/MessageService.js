@@ -11,7 +11,7 @@
  *
  * @todo do we need some queue dismiss?
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.services')

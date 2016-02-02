@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain controllers and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   // Controller for new sensor creation.
@@ -11,10 +11,8 @@
     .controller('SensorAddController', [
       '$scope', '$state',
       'MessageService', 'SensorModel',
-      function controller(
-        $scope, $state,
-        MessageService, SensorModel
-      ) {
+      function controller($scope, $state,
+                          MessageService, SensorModel) {
         // Initialize sensor model
         $scope.sensor = {
           name: '',
@@ -48,12 +46,10 @@
       'UserService', 'MessageService',
       'SensorModel', 'MeasurementModel',
       '_sensor', '_measurements', '_measurementsCount',
-      function controller(
-        $scope, $state, _, moment,
-        UserService, MessageService,
-        SensorModel, MeasurementModel,
-        _sensor, _measurements, _measurementsCount
-      ) {
+      function controller($scope, $state, _, moment,
+                          UserService, MessageService,
+                          SensorModel, MeasurementModel,
+                          _sensor, _measurements, _measurementsCount) {
         // Set current scope reference to models
         SensorModel.setScope($scope, 'sensor');
         MeasurementModel.setScope($scope, false, 'measurements', 'measurementsCount');
@@ -108,25 +104,26 @@
           ;
         };
 
-        var times = _.range(24).map(function(x, i){
-          return moment().subtract(24-i-1, 'hours');
+        var times = _.range(24).map(function (x, i) {
+          return moment().subtract(24 - i - 1, 'hours');
         });
 
-        var labels = times.map(function(time){
+        var labels = times.map(function (time) {
           return time.format('HH:mm');
         });
 
-        var data = times.map(function(time){
-          var measurementsInRange = _.filter(_measurements, function(measurement){
+        var data = times.map(function (time) {
+          var measurementsInRange = _.filter(_measurements, function (measurement) {
             return Math.abs(moment(measurement.timestamp).diff(time)) < 1800000;
           });
 
-          if (measurementsInRange.length === 0)
-          {
+          if (measurementsInRange.length === 0) {
             return 0;
           }
 
-          var total = _.sumBy(measurementsInRange, function(item){return item.value;});
+          var total = _.sumBy(measurementsInRange, function (item) {
+            return item.value;
+          });
           return total / measurementsInRange.length;
         });
 
@@ -145,13 +142,11 @@
       'ListConfig',
       'SocketHelperService', 'UserService', 'SensorModel',
       '_items', '_count',
-      function controller(
-        $scope, $q, $timeout,
-        _,
-        ListConfig,
-        SocketHelperService, UserService, SensorModel,
-        _items, _count
-      ) {
+      function controller($scope, $q, $timeout,
+                          _,
+                          ListConfig,
+                          SocketHelperService, UserService, SensorModel,
+                          _items, _count) {
         // Set current scope reference to model
         SensorModel.setScope($scope, false, 'items', 'itemCount');
 
@@ -288,7 +283,7 @@
                 $scope.itemCount = response.count;
               }
             )
-          ;
+            ;
 
           // Fetch actual data
           var load = SensorModel
@@ -298,7 +293,7 @@
                 $scope.items = response;
               }
             )
-          ;
+            ;
 
           // And wrap those all to promise loading
           $q

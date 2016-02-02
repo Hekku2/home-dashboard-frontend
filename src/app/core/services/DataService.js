@@ -5,7 +5,7 @@
  * This is needed because we need to make some common url handling for sails
  * endpoint.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.services')
@@ -13,11 +13,9 @@
       '$sailsSocket',
       '_',
       'BackendConfig',
-      function factory(
-        $sailsSocket,
-        _,
-        BackendConfig
-      ) {
+      function factory($sailsSocket,
+                       _,
+                       BackendConfig) {
         /**
          * Helper function to get "proper" end point url for sails backend API.
          *

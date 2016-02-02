@@ -7,7 +7,7 @@
  * All of these are wrapped to 'frontend.admin.login-history' angular module. This also contains necessary route
  * definitions for this module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.admin module.login-history
@@ -29,10 +29,8 @@
                   _items: [
                     'ListConfig',
                     'LoginHistoryModel',
-                    function resolve(
-                      ListConfig,
-                      LoginHistoryModel
-                    ) {
+                    function resolve(ListConfig,
+                                     LoginHistoryModel) {
                       var config = ListConfig.getConfig();
 
                       var parameters = {

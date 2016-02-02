@@ -6,7 +6,7 @@
  * All of these are wrapped to 'frontend.admin.login-history' angular module. This also contains necessary route
  * definitions for this module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Define frontend.admin module.users
@@ -28,10 +28,8 @@
                   _items: [
                     'ListConfig',
                     'UsersModel',
-                    function resolve(
-                      ListConfig,
-                      UsersModel
-                    ) {
+                    function resolve(ListConfig,
+                                     UsersModel) {
                       var parameters = {
                         limit: config.itemsPerPage,
                         sort: 'username ASC'

@@ -1,7 +1,7 @@
 /**
  * This file contains all necessary Angular model definitions for 'frontend.details.overview' module.
  */
-(function() {
+(function () {
   'use strict';
 
   /**
@@ -14,10 +14,8 @@
     .factory('SensorOverviewModel', [
       '$log',
       'DataModel', 'DataService',
-      function factory(
-        $log,
-        DataModel, DataService
-      ) {
+      function factory($log,
+                       DataModel, DataService) {
         var model = new DataModel('sensor');
 
         model.sensorOverview = function sensorOverview() {

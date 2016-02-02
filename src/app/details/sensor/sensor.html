@@ -1,105 +1,105 @@
 <div data-ng-show="!sensor">
-    <h3>Requested sensor not found</h3>
+  <h3>Requested sensor not found</h3>
 </div>
 
 <div data-ng-show="sensor">
-    <form class="form-vertical" role="form"
+  <form class="form-vertical" role="form"
         data-editable-form name="editableForm"
         data-onaftersave="saveSensor()"
-    >
-        <div class="row">
-            <div class="col-md-8">
-                <h3>
+  >
+    <div class="row">
+      <div class="col-md-8">
+        <h3>
                     <span style="width: 100%;"
-                        data-editable-text="sensor.name"
-                        data-e-name="sensor.name"
-                        data-e-required
+                          data-editable-text="sensor.name"
+                          data-e-name="sensor.name"
+                          data-e-required
                     >
                         {{sensor.name}}
                     </span>
 
                     <span class="pull-right"
-                        data-ng-show="!editableForm.$visible && user.admin"
+                          data-ng-show="!editableForm.$visible && user.admin"
                     >
                         <a href="#"
-                            data-ng-click="editableForm.$show()"
-                            data-tooltip="Toggle edit mode"
+                           data-ng-click="editableForm.$show()"
+                           data-tooltip="Toggle edit mode"
                         >
-                            <i class="fa fa-wrench"></i>
+                          <i class="fa fa-wrench"></i>
                         </a>
                     </span>
-                </h3>
+        </h3>
 
-                <h4>
+        <h4>
                   <span style="width: 100%;">
                     Group: {{sensor.group.name}}
                   </span>
-                </h4>
-                <p style="white-space: pre-line"
-                    data-editable-textarea="sensor.description"
-                    data-e-name="sensor.description"
-                    data-e-class="editable-textarea"
-                    data-e-required
-                >
-                    {{sensor.description}}
-                </p>
+        </h4>
+        <p style="white-space: pre-line"
+           data-editable-textarea="sensor.description"
+           data-e-name="sensor.description"
+           data-e-class="editable-textarea"
+           data-e-required
+        >
+          {{sensor.description}}
+        </p>
 
-                <div>
-                    <div data-ng-show="editableForm.$visible">
-                        <button type="submit" class="btn btn-primary"
-                            data-ng-disabled="editableForm.$waiting"
-                        >
-                            Save
-                        </button>
-                        <button type="button" class="btn btn-default"
-                            data-ng-disabled="editableForm.$waiting"
-                            data-ng-click="editableForm.$cancel()"
-                        >
-                            Cancel
-                        </button>
-                        <button type="button" class="btn btn-danger pull-right"
-                            data-ng-bootbox-title="Danger - Danger - Danger"
-                            data-ng-bootbox-custom-dialog="Are you sure about the <strong>{{sensor.name}}</strong> sensor delete?"
-                            data-ng-bootbox-buttons="confirmButtonsDelete"
-                        >
-                            Delete
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <h4>Measurements ({{measurementsCount}})</h4>
-                <table class="table table-condensed table-hover">
-                    <thead>
-                        <tr>
-                            <th class="col-xs-8">
-                                Value
-                            </th>
-                            <th class="col-xs-4 text-right">
-                                Timestamp
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-ng-repeat="measurement in measurements">
-                            <td>
-                                {{measurement.value}} {{sensor.unit}}
-                            </td>
-                            <td class="text-right">
-                                {{measurement.timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="col-md-12">
-                <canvas id="line" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-series="series"
-                        chart-click="onClick" >
-                </canvas>
-            </div>
+        <div>
+          <div data-ng-show="editableForm.$visible">
+            <button type="submit" class="btn btn-primary"
+                    data-ng-disabled="editableForm.$waiting"
+            >
+              Save
+            </button>
+            <button type="button" class="btn btn-default"
+                    data-ng-disabled="editableForm.$waiting"
+                    data-ng-click="editableForm.$cancel()"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-danger pull-right"
+                    data-ng-bootbox-title="Danger - Danger - Danger"
+                    data-ng-bootbox-custom-dialog="Are you sure about the <strong>{{sensor.name}}</strong> sensor delete?"
+                    data-ng-bootbox-buttons="confirmButtonsDelete"
+            >
+              Delete
+            </button>
+          </div>
         </div>
-    </form>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Measurements ({{measurementsCount}})</h4>
+        <table class="table table-condensed table-hover">
+          <thead>
+          <tr>
+            <th class="col-xs-8">
+              Value
+            </th>
+            <th class="col-xs-4 text-right">
+              Timestamp
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-ng-repeat="measurement in measurements">
+            <td>
+              {{measurement.value}} {{sensor.unit}}
+            </td>
+            <td class="text-right">
+              {{measurement.timestamp | amDateFormat: 'YYYY-DD-MM HH:mm:ss'}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-12">
+        <canvas id="line" class="chart chart-line" chart-data="data"
+                chart-labels="labels" chart-legend="true" chart-series="series"
+                chart-click="onClick">
+        </canvas>
+      </div>
+    </div>
+  </form>
 </div>

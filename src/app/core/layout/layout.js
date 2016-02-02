@@ -8,7 +8,7 @@
  *
  * All of these are wrapped to 'frontend.core.layout' angular module.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.layout', []);

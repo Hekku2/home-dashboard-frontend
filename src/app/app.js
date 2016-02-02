@@ -3,7 +3,7 @@
  *
  * This is the main file for the 'Frontend' application.
  */
-(function() {
+(function () {
   'use strict';
 
   // Create frontend module and specify dependencies for that
@@ -28,12 +28,10 @@
       '$tooltipProvider', 'cfpLoadingBarProvider',
       'toastrConfig',
       'AccessLevels',
-      function config(
-        $stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $sailsSocketProvider,
-        $tooltipProvider, cfpLoadingBarProvider,
-        toastrConfig,
-        AccessLevels
-      ) {
+      function config($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $sailsSocketProvider,
+                      $tooltipProvider, cfpLoadingBarProvider,
+                      toastrConfig,
+                      AccessLevels) {
         $httpProvider.defaults.useXDomain = true;
 
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -123,11 +121,9 @@
       '$rootScope', '$state', '$injector',
       'editableOptions',
       'AuthService',
-      function run(
-        $rootScope, $state, $injector,
-        editableOptions,
-        AuthService
-      ) {
+      function run($rootScope, $state, $injector,
+                   editableOptions,
+                   AuthService) {
         // Set usage of Bootstrap 3 CSS with angular-xeditable
         editableOptions.theme = 'bs3';
 

@@ -1,7 +1,7 @@
 /**
  * This file contains all necessary Angular controller definitions for 'frontend.admin.users' module.
  */
-(function() {
+(function () {
   'use strict';
 
   // Controller which contains all necessary logic for sensor list GUI on boilerplate application.
@@ -12,13 +12,11 @@
       'ListConfig',
       'SocketHelperService', 'UserService', 'UsersModel',
       '_items', '_count',
-      function controller(
-        $scope, $q, $timeout,
-        _,
-        ListConfig,
-        SocketHelperService, UserService, UsersModel,
-        _items, _count
-      ) {
+      function controller($scope, $q, $timeout,
+                          _,
+                          ListConfig,
+                          SocketHelperService, UserService, UsersModel,
+                          _items, _count) {
         // Set current scope reference to model
         UsersModel.setScope($scope, false, 'items', 'itemCount');
 

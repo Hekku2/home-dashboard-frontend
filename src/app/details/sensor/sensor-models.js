@@ -4,7 +4,7 @@
  * Note that this file should only contain models and nothing else. Also note that these "models" are just basically
  * services that wraps all things together.
  */
-(function() {
+(function () {
   'use strict';
 
   /**
@@ -13,7 +13,7 @@
   angular.module('frontend.details.sensor')
     .service('SensorModel', [
       'DataModel',
-      function(DataModel) {
+      function (DataModel) {
         return new DataModel('sensor');
       }
     ])

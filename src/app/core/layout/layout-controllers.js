@@ -3,7 +3,7 @@
  *
  * Note that this file should only contain controllers and nothing else.
  */
-(function() {
+(function () {
   'use strict';
 
   /**
@@ -19,11 +19,9 @@
       '$scope', '$state',
       'HeaderNavigationItems',
       'UserService', 'AuthService',
-      function controller(
-        $scope, $state,
-        HeaderNavigationItems,
-        UserService, AuthService
-      ) {
+      function controller($scope, $state,
+                          HeaderNavigationItems,
+                          UserService, AuthService) {
         $scope.user = UserService.user;
         $scope.auth = AuthService;
         $scope.navigationItems = HeaderNavigationItems;
@@ -92,10 +90,8 @@
     .controller('NavigationController', [
       '$scope', '$state', '$modal',
       '_items',
-      function controller(
-        $scope, $state, $modal,
-        _items
-      ) {
+      function controller($scope, $state, $modal,
+                          _items) {
         $scope.navigationItems = _items;
 
         // Helper function to open information modal about current GUI.
@@ -133,11 +129,9 @@
       '$scope', '$modalInstance',
       'BackendConfig',
       '_title', '_files', '_template',
-      function(
-        $scope, $modalInstance,
-        BackendConfig,
-        _title, _files, _template
-      ) {
+      function ($scope, $modalInstance,
+                BackendConfig,
+                _title, _files, _template) {
         $scope.title = _title;
         $scope.files = _files;
         $scope.template = _template;

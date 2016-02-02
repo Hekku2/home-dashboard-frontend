@@ -18,7 +18,7 @@
  *
  * @todo add more complex parameter handling
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.services')

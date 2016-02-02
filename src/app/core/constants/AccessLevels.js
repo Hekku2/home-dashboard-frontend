@@ -4,7 +4,7 @@
  *
  * Note that actual access check is done by currently signed in user.
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend')

@@ -6,15 +6,13 @@
  * @see http://angular-tips.com/blog/2014/05/json-web-tokens-introduction/
  * @see http://angular-tips.com/blog/2014/05/json-web-tokens-details/
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('frontend.core.interceptors')
     .factory('AuthInterceptor', [
       '$q', '$injector', '$localStorage',
-      function(
-        $q, $injector, $localStorage
-      ) {
+      function ($q, $injector, $localStorage) {
         return {
           /**
            * Interceptor method for $http requests. Main purpose of this method is to add JWT token
