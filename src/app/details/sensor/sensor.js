@@ -71,7 +71,7 @@
                       $stateParams,
                       SensorModel
                     ) {
-                      return SensorModel.fetch($stateParams.id);
+                      return SensorModel.fetch($stateParams.id, {populate: 'group'});
                     }
                   ],
                   _measurements: [
