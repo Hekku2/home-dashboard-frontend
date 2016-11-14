@@ -6,13 +6,12 @@
   "scripts": {
     "start": "gulp watch",
     "test": "gulp test",
-    "postinstall": "./node_modules/bower/bin/bower install --config.interactive=false"
+    "postinstall": "bower install --config.interactive=false"
   },
   "keywords": [
     "slush, angular, slush-angular"
   ],
   "dependencies": {
-    "bower": "1.6.5",
     "connect-history-api-fallback": "1.1.0"
   },
   "devDependencies": {
