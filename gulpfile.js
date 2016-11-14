@@ -4,7 +4,7 @@
 var gulp = require('gulp');
 var replace = require('gulp-replace-task');
 var fs = require('fs');
-var karma = require("gulp-karma-runner");
+var karma = require('gulp-karma-runner');
 var g = require('gulp-load-plugins')({lazy: false});
 var noop = g.util.noop;
 var es = require('event-stream');
@@ -279,7 +279,7 @@ gulp.task('karma-conf', ['templates'], function() {
  * Test files
  */
 function testFiles() {
-  return new queue({objectMode: true})
+  return queue({objectMode: true})
     .queue(gulp.src(mainBowerFiles()).pipe(g.filter('**/*.js')))
     .queue(gulp.src('./bower_components/angular-mocks/angular-mocks.js'))
     .queue(appFiles())
