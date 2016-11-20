@@ -5,8 +5,7 @@
   "description": "Frontend server of home-dasboard",
   "scripts": {
     "start": "gulp watch",
-    "test": "gulp test",
-    "postinstall": "bower install --config.interactive=false"
+    "test": "gulp test"
   },
   "keywords": [
     "slush, angular, slush-angular"
