@@ -1,6 +1,10 @@
 {
   "backendUrl": "http://localhost:1337",
   "frontend": {
+    "hostnames": {
+      "production": "0.0.0.0",
+      "development": "0.0.0.0"
+    },
     "ports": {
       "production": 3000,
       "development": 3001
