@@ -26,11 +26,11 @@
   angular.module('frontend')
     .config([
       '$stateProvider', '$locationProvider', '$urlRouterProvider', '$httpProvider', '$sailsSocketProvider',
-      '$tooltipProvider', 'cfpLoadingBarProvider',
+      '$uibTooltipProvider', 'cfpLoadingBarProvider',
       'toastrConfig',
       'AccessLevels',
       function config($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $sailsSocketProvider,
-                      $tooltipProvider, cfpLoadingBarProvider,
+                      $uibTooltipProvider, cfpLoadingBarProvider,
                       toastrConfig,
                       AccessLevels) {
         $httpProvider.defaults.useXDomain = true;
@@ -47,7 +47,7 @@
         });
 
         // Set tooltip options
-        $tooltipProvider.options({
+        $uibTooltipProvider.options({
           appendToBody: true
         });
 
