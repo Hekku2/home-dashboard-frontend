@@ -23,29 +23,29 @@
     "bootswatch-dist": "3.3.2-spacelab",
     "fontawesome": "4.7.0",
     "lodash": "4.17.2",
-    "angular": "1.5.8",
+    "angular": "1.5.9",
     "angular-animate": "~1.5.8",
     "angular-loading-bar": "0.9.0",
     "angular-ui-router": "0.3.2",
-    "angular-ui-bootstrap-bower": "2.2.0",
+    "angular-ui-bootstrap-bower": "2.3.0",
     "angular-ui-utils": "3.0.0",
-    "angular-moment": "1.0.0",
+    "angular-moment": "1.0.1",
     "angular-bootstrap-show-errors": "2.3.0",
-    "angular-sanitize": "1.5.8",
+    "angular-sanitize": "1.5.9",
     "angular-xeditable": "0.5.0",
     "angular-toastr": "2.1.1",
-    "angular-chart.js": "1.0.3",
-    "textAngular": "1.5.13",
+    "angular-chart.js": "1.1.1",
+    "textAngular": "1.5.16",
     "bootbox": "4.4.0",
     "ngBootbox": "0.1.4",
-    "sails.io.js": "1.0.1",
+    "sails.io.js": "1.1.0",
     "angularSails": "master",
     "ngstorage": "~0.3.0",
     "highcharts": "~5.0.3",
     "highcharts-ng": "~0.0.8"
   },
   "devDependencies": {
-    "angular-mocks": "1.5.8"
+    "angular-mocks": "1.5.9"
   },
   "overrides": {
     "fontawesome": {
@@ -64,7 +64,7 @@
   },
   "resolutions": {
     "lodash": "3.2.0",
-    "angular": "1.5.8",
+    "angular": "1.5.9",
     "bootbox": "4.4.0"
   }
 }

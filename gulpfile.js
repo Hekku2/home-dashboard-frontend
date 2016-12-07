@@ -72,7 +72,7 @@ gulp.task('csslint', ['styles'], function() {
   return cssFiles()
     .pipe(g.cached('csslint'))
     .pipe(g.csslint('./.csslintrc'))
-    .pipe(g.csslint.reporter())
+    .pipe(g.csslint.formatter())
   ;
 });
 
