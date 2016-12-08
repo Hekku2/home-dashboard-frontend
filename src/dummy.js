@@ -17,6 +17,10 @@ var layout = {
 var settings = {
   backendUrl: string,
   frontend: {
+    hostnames: {
+      production: string,
+      development: string
+    },
     ports: {
       production: number,
       development: number
