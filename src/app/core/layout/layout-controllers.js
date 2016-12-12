@@ -73,9 +73,9 @@
    */
   angular.module('frontend.core.layout')
     .controller('NavigationController', [
-      '$scope', '$state', '$modal',
+      '$scope', '$state', '$uibModal',
       '_items',
-      function controller($scope, $state, $modal,
+      function controller($scope, $state, $uibModal,
                           _items) {
         $scope.navigationItems = _items;
       }
