@@ -79,7 +79,10 @@
                       return MeasurementModel.load({
                         sensor: $stateParams.id,
                         limit: config.itemsPerPage,
-                        where: {'timestamp':{greaterThan: moment().subtract(1, 'days')}},
+                        where: {
+                          'timestamp':{greaterThan: moment().subtract(30, 'days')},
+                          'sensor': $stateParams.id
+                        },
                         sort: 'timestamp DESC'
                       });
                     }
@@ -89,7 +92,13 @@
                     'MeasurementModel',
                     function resolve($stateParams,
                                      MeasurementModel) {
-                      return MeasurementModel.count({sensor: $stateParams.id});
+                      return MeasurementModel.count({
+                        sensor: $stateParams.id,
+                        where: {
+                          'timestamp':{greaterThan: moment().subtract(30, 'days')},
+                          'sensor': $stateParams.id
+                        }
+                      });
                     }
                   ]
                 }
