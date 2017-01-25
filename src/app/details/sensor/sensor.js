@@ -80,7 +80,7 @@
                         sensor: $stateParams.id,
                         limit: config.itemsPerPage,
                         where: {
-                          'timestamp':{greaterThan: moment().subtract(30, 'days')},
+                          'timestamp':{greaterThan: moment().subtract(1, 'days')},
                           'sensor': $stateParams.id
                         },
                         sort: 'timestamp DESC'
@@ -95,7 +95,7 @@
                       return MeasurementModel.count({
                         sensor: $stateParams.id,
                         where: {
-                          'timestamp':{greaterThan: moment().subtract(30, 'days')},
+                          'timestamp':{greaterThan: moment().subtract(1, 'days')},
                           'sensor': $stateParams.id
                         }
                       });
