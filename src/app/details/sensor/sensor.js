@@ -16,8 +16,9 @@
   // Module configuration
   angular.module('frontend.details.sensor')
     .config([
+      'moment',
       '$stateProvider',
-      function config($stateProvider) {
+      function config(moment, $stateProvider) {
         $stateProvider
         // Sensors list
           .state('details.sensors', {
@@ -77,6 +78,8 @@
                                      MeasurementModel) {
                       return MeasurementModel.load({
                         sensor: $stateParams.id,
+                        limit: config.itemsPerPage,
+                        where: {'timestamp':{greaterThan: moment().subtract(1, 'days')}},
                         sort: 'timestamp DESC'
                       });
                     }
