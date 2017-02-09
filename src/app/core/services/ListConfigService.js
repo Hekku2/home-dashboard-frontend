@@ -50,15 +50,6 @@
               sortable: true,
               inSearch: true,
               inTitle: true
-            },
-            {
-              title: 'Measurements',
-              column: false,
-              class: 'text-right col-xs-1',
-              searchable: false,
-              sortable: false,
-              inSearch: false,
-              inTitle: true
             }
           ],
           measurement: [
